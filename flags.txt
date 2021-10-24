@@ -1,0 +1,14 @@
+c / % = character
+
+d / i = signed int
+
+s = string
+
+p = pointer address
+
+u = unsigned int
+
+x = unsigned hexadecimal int
+
+X = unsigned hexadecimal int (CAP LETTERS) ?
+
