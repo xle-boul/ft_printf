@@ -6,7 +6,7 @@
 /*   By: xle-boul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 11:40:23 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/10/24 12:43:12 by xle-boul         ###   ########.fr       */
+/*   Updated: 2021/10/24 23:59:19 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,5 @@ void	ft_printf_u(t_flags flags, va_list args, t_tot *tot, char *str)
 	t_char	c;
 
 	c.ui = va_arg(args, unsigned int);
-	ft_putnbr_fd_print(c.ui, 1, tot);
+	ft_putnbr_fd_print_u(c.ui, 1, tot);
 }

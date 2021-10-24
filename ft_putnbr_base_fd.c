@@ -6,7 +6,7 @@
 /*   By: xle-boul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 12:47:22 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/10/23 22:24:53 by xle-boul         ###   ########.fr       */
+/*   Updated: 2021/10/24 23:36:19 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	ft_putnbr_base_cap_fd(long int n, int base, int fd, t_tot *tot)
 	{
 		ft_putchar_fd('-', fd);
 		n *= -1;
+		tot->n++;
 	}
 	nb = n;
 	if (nb >= (long int)base)
@@ -50,6 +51,7 @@ void	ft_putnbr_base_low_fd(long int n, int base, int fd, t_tot *tot)
 	{
 		ft_putchar_fd('-', fd);
 		n *= -1;
+		tot->n++;
 	}
 	nb = n;
 	if (nb >= (long int)base)

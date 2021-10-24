@@ -6,7 +6,7 @@
 /*   By: xle-boul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 11:39:20 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/10/24 16:24:21 by xle-boul         ###   ########.fr       */
+/*   Updated: 2021/10/25 00:02:26 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	ft_manage_flags(char *str, va_list args, t_flags flags, t_tot *tot)
 		str++;
 	}
 	flags.param = *str;
-	printf("dot = %d\nzero/minus = %d\nspace/plus = %d\nnumber = %d\nsquare = %d\nparam = %c\n", flags.dot, flags.zemin, flags.spaplus, flags.number, flags.square, flags.param);
+	printf("dot = %d\nzero(-1)/minus(1) = %d\nspace(-1)/plus(1) = %d\nnumber = %d\nsquare = %d\nparam = %c\n", flags.dot, flags.zemin, flags.spaplus, flags.number, flags.square, flags.param);
 	ft_hub(flags, args, tot, str);
 }
 

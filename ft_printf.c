@@ -6,7 +6,7 @@
 /*   By: xle-boul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 15:46:20 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/10/24 16:26:07 by xle-boul         ###   ########.fr       */
+/*   Updated: 2021/10/25 00:07:33 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,6 @@ int main()
 	char	n[] = "cacasurtondoigt";
 	int		precision = 4;
 	
-	ft_printf("1. % 0#.12345-542x\n", 15);
+	printf("\n%d", printf("%X", -12345));
 	return (0);
 }
