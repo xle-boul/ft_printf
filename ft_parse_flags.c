@@ -6,7 +6,7 @@
 /*   By: xle-boul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 11:39:20 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/10/23 23:46:59 by xle-boul         ###   ########.fr       */
+/*   Updated: 2021/10/24 16:24:21 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,30 +16,31 @@
 
 void	ft_manage_flags(char *str, va_list args, t_flags flags, t_tot *tot)
 {
-	if (ft_what_char(*str) == 0)
-		flags.param = *str;
-	else
+	while (ft_what_char(*str) != 0)
 	{
-		while (ft_what_flag_short(*str) == 0)
+		if (*str == '.')
+			flags.dot = 1;
+		if (*str == '0' && ft_isdigit(*(str - 1)) != 1 && flags.zemin != 1)
+			flags.zemin = -1;
+		if (*str == '-')
+			flags.zemin = 1;
+		if (*str == ' ' && flags.spaplus != 1)
+			flags.spaplus = -1;
+		if (*str == '+')
+			flags.spaplus = 1;
+		if (*str == '#')
+			flags.square = 1;
+		if (ft_isdigit(*str) == 1 && *str != 0)
 		{
-			if (*str == '.')
-				flags.dot = 1;
-			if (*str == '-')
-				flags.minus = 1;
-			if (*str == '*')
-				flags.star = 1;
-			if (*str == '0')
-				flags.zero = 1;
-			str++;
+			flags.number = ft_atoi(str);
+			while (ft_isdigit(*(str + 1)) == 1)
+				str++;
 		}
-		if (ft_what_flag(*str) != 0 && ft_what_char != 0)
-			return ;
-		flags.number = ft_atoi(str);
-		while (ft_what_flag(*str) == 0)
-			str++;
-		flags.param = *str;
+		str++;
 	}
-	ft_hub(flags, args, tot);
+	flags.param = *str;
+	printf("dot = %d\nzero/minus = %d\nspace/plus = %d\nnumber = %d\nsquare = %d\nparam = %c\n", flags.dot, flags.zemin, flags.spaplus, flags.number, flags.square, flags.param);
+	ft_hub(flags, args, tot, str);
 }
 
 void	ft_init_struct(char *str, va_list args, t_tot *tot)
@@ -49,10 +50,10 @@ void	ft_init_struct(char *str, va_list args, t_tot *tot)
 	flags.dot = 0;
 	flags.minus = 0;
 	flags.number = 0;
-	flags.star = 0;
-	flags.zero = 0;
+	flags.zemin = 0;
+	flags.spaplus = 0;
 	flags.param = 0;
-	flags.total = 0;
+	flags.square = 0;
 	ft_manage_flags(str, args, flags, tot);
 }
 

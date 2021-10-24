@@ -1,21 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_u.c                                      :+:      :+:    :+:   */
+/*   printftest.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xle-boul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/21 11:40:23 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/10/24 12:43:12 by xle-boul         ###   ########.fr       */
+/*   Created: 2021/10/24 14:29:36 by xle-boul          #+#    #+#             */
+/*   Updated: 2021/10/24 15:20:27 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libprintf.h"
+#include <stdio.h>
 
-void	ft_printf_u(t_flags flags, va_list args, t_tot *tot, char *str)
+int main()
 {
-	t_char	c;
-
-	c.ui = va_arg(args, unsigned int);
-	ft_putnbr_fd_print(c.ui, 1, tot);
+	printf("%#x", 0);
+	return 0;
 }

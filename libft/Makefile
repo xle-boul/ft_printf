@@ -6,7 +6,7 @@
 #    By: xle-boul <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/10 21:26:49 by xle-boul          #+#    #+#              #
-#    Updated: 2021/10/21 10:50:57 by xle-boul         ###   ########.fr        #
+#    Updated: 2021/10/24 14:03:47 by xle-boul         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,8 +43,7 @@ SRCS = ft_memset.c			\
 		ft_putchar_fd.c		\
 		ft_putstr_fd.c		\
 		ft_putendl_fd.c		\
-		ft_putnbr_fd.c		\
-		ft_putnbr_base_fd.c
+		ft_putnbr_fd.c
 
 SRCSB =	ft_lstnew.c			\
 		ft_lstadd_front.c	\

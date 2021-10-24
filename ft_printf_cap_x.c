@@ -6,13 +6,13 @@
 /*   By: xle-boul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 11:48:41 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/10/23 23:50:01 by xle-boul         ###   ########.fr       */
+/*   Updated: 2021/10/24 12:43:27 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libprintf.h"
 
-void	ft_printf_cap_x(t_flags flags, va_list args, t_tot *tot)
+void	ft_printf_cap_x(t_flags flags, va_list args, t_tot *tot, char *str)
 {
 	t_char	c;
 

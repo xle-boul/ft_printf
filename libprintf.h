@@ -6,7 +6,7 @@
 /*   By: xle-boul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 15:49:49 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/10/24 11:25:59 by xle-boul         ###   ########.fr       */
+/*   Updated: 2021/10/24 15:53:14 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 # include <stdarg.h>
 
 # define CHARS "cspdiuxX%"
-# define FLAGS ".0123456789*"
-# define FLAGS_SHORT ".-0*"
+# define FLAGS ".0123456789# +-"
+# define FLAGS_SHORT ".-0 +#"
 
 typedef struct s_tot
 {
@@ -39,22 +39,22 @@ typedef struct s_char
 }			t_char;
 typedef struct s_flags
 {
-	int		zero;
+	int		zemin;
+	int		spaplus;
 	char	minus;
-	char	star;
 	char	dot;
 	int		number;
 	char	param;
-	int		total;
+	int		square;
 }				t_flags;
 
-void	ft_printf_cap_x(t_flags flags, va_list args, t_tot *tot);
-void	ft_printf_x(t_flags flags, va_list args, t_tot *tot);
-void	ft_printf_di(t_flags flags, va_list args, t_tot *tot);
-void	ft_printf_p(t_flags flags, va_list args, t_tot *tot);
-void	ft_printf_s(t_flags flags, va_list args, t_tot *tot);
-void	ft_printf_u(t_flags flags, va_list args, t_tot *tot);
-void	ft_printf_c(t_flags flags, va_list args, t_tot *tot);
+void	ft_printf_cap_x(t_flags flags, va_list args, t_tot *tot, char *str);
+void	ft_printf_x(t_flags flags, va_list args, t_tot *tot, char *str);
+void	ft_printf_di(t_flags flags, va_list args, t_tot *tot, char *str);
+void	ft_printf_p(t_flags flags, va_list args, t_tot *tot, char *str);
+void	ft_printf_s(t_flags flags, va_list args, t_tot *tot, char *str);
+void	ft_printf_u(t_flags flags, va_list args, t_tot *tot, char *str);
+void	ft_printf_c(t_flags flags, va_list args, t_tot *tot, char *str);
 int		ft_what_char(char c);
 int		ft_what_flag(char c);
 void	ft_manage_flags(char *str, va_list args, t_flags flags, t_tot *tot);
@@ -63,10 +63,11 @@ void	ft_parse_string(const char *c, va_list args, t_tot *tot);
 int		ft_what_char(char c);
 int		ft_what_flag(char c);
 int		ft_what_flag_short(char c);
-void	ft_hub(t_flags flags, va_list args, t_tot *tot);
+void	ft_hub(t_flags flags, va_list args, t_tot *tot, char *str);
 void	ft_putnbr_base_cap_fd(long int n, int base, int fd, t_tot *tot);
 void	ft_putnbr_base_low_fd(long int n, int base, int fd, t_tot *tot);
 void	ft_putnbr_fd_print(int n, int fd, t_tot *tot);
 void	ft_putchar_fd_print(char c, int fd, t_tot *tot);
+void	ft_putstr_fd_print(char *s, int fd, t_tot *tot);
 
 #endif
