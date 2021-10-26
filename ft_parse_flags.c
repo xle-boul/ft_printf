@@ -6,7 +6,7 @@
 /*   By: xle-boul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 11:39:20 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/10/25 00:02:26 by xle-boul         ###   ########.fr       */
+/*   Updated: 2021/10/25 14:54:26 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,45 @@
 
 /* assigns values to struct i according to flags */
 
+void	ft_numbers_in_flags(char *str, t_flags *flags)
+{
+	int	i;
+	int	temp;
+
+	i = 0;
+	flags->number = ft_atoi(str);
+	if (flags->high_num == 0)
+		flags->high_num = flags->number;
+	else if (flags->high_num != 0 && flags->high_num < flags->number)
+		flags->high_num = flags->number;
+	printf("%d %d\n", flags->number, flags->high_num);
+}
+
 void	ft_manage_flags(char *str, va_list args, t_flags flags, t_tot *tot)
 {
 	while (ft_what_char(*str) != 0)
 	{
 		if (*str == '.')
 			flags.dot = 1;
-		if (*str == '0' && ft_isdigit(*(str - 1)) != 1 && flags.zemin != 1)
+		else if (*str == '0' && ft_isdigit(*(str - 1)) != 1 && flags.zemin != 1)
 			flags.zemin = -1;
-		if (*str == '-')
+		else if (*str == '-')
 			flags.zemin = 1;
-		if (*str == ' ' && flags.spaplus != 1)
+		else if (*str == ' ' && flags.spaplus != 1)
 			flags.spaplus = -1;
-		if (*str == '+')
+		else if (*str == '+')
 			flags.spaplus = 1;
-		if (*str == '#')
+		else if (*str == '#')
 			flags.square = 1;
-		if (ft_isdigit(*str) == 1 && *str != 0)
+		else if (ft_isdigit(*str) == 1 && *str != 0)
 		{
-			flags.number = ft_atoi(str);
+			ft_numbers_in_flags(str, &flags);
 			while (ft_isdigit(*(str + 1)) == 1)
 				str++;
 		}
 		str++;
 	}
 	flags.param = *str;
-	printf("dot = %d\nzero(-1)/minus(1) = %d\nspace(-1)/plus(1) = %d\nnumber = %d\nsquare = %d\nparam = %c\n", flags.dot, flags.zemin, flags.spaplus, flags.number, flags.square, flags.param);
 	ft_hub(flags, args, tot, str);
 }
 

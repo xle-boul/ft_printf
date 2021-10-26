@@ -6,7 +6,7 @@
 /*   By: xle-boul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 15:49:49 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/10/24 23:58:14 by xle-boul         ###   ########.fr       */
+/*   Updated: 2021/10/25 14:43:35 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ typedef struct s_flags
 	char	minus;
 	char	dot;
 	int		number;
+	int		high_num;
 	char	param;
 	int		square;
 }				t_flags;
@@ -68,7 +69,7 @@ void	ft_putnbr_base_cap_fd(long int n, int base, int fd, t_tot *tot);
 void	ft_putnbr_base_low_fd(long int n, int base, int fd, t_tot *tot);
 void	ft_putnbr_fd_print(int n, int fd, t_tot *tot);
 void	ft_putchar_fd_print(char c, int fd, t_tot *tot);
-void	ft_putstr_fd_print(char *s, int fd, t_tot *tot);
+void	ft_putstr_fd_print(char *s, int fd, size_t len, t_tot *tot);
 void	ft_putnbr_fd_print_u(unsigned int n, int fd, t_tot *tot);
 
 #endif
