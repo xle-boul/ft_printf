@@ -6,13 +6,13 @@
 /*   By: xle-boul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 11:40:53 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/10/19 12:09:35 by xle-boul         ###   ########.fr       */
+/*   Updated: 2021/10/24 10:51:11 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* 	allocates memory of size size * nmemb to string.
+/* 	allocates memory of size size * nmemb.
 	fills elements with 0 */
 
 void	*ft_calloc(size_t nmemb, size_t size)

@@ -6,7 +6,7 @@
 /*   By: xle-boul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 11:39:20 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/10/25 14:54:26 by xle-boul         ###   ########.fr       */
+/*   Updated: 2021/10/26 14:56:49 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,52 +14,40 @@
 
 /* assigns values to struct i according to flags */
 
-void	ft_numbers_in_flags(char *str, t_flags *flags)
+void	ft_manage_flags(va_list args, t_flags flags, t_tot *tot)
 {
-	int	i;
-	int	temp;
-
-	i = 0;
-	flags->number = ft_atoi(str);
-	if (flags->high_num == 0)
-		flags->high_num = flags->number;
-	else if (flags->high_num != 0 && flags->high_num < flags->number)
-		flags->high_num = flags->number;
-	printf("%d %d\n", flags->number, flags->high_num);
-}
-
-void	ft_manage_flags(char *str, va_list args, t_flags flags, t_tot *tot)
-{
-	while (ft_what_char(*str) != 0)
+	while (ft_what_char(*flags.substr) != 0)
 	{
-		if (*str == '.')
-			flags.dot = 1;
-		else if (*str == '0' && ft_isdigit(*(str - 1)) != 1 && flags.zemin != 1)
+		if (*flags.substr == '.')
+			flags.high_num = ft_dot_flag(flags, &flags.substr);
+		else if (*flags.substr == '0' && ft_isdigit(*(flags.substr - 1))
+			!= 1 && flags.zemin != 1)
 			flags.zemin = -1;
-		else if (*str == '-')
+		else if (*flags.substr == '-')
 			flags.zemin = 1;
-		else if (*str == ' ' && flags.spaplus != 1)
+		else if (*flags.substr == ' ' && flags.spaplus != 1)
 			flags.spaplus = -1;
-		else if (*str == '+')
+		else if (*flags.substr == '+')
 			flags.spaplus = 1;
-		else if (*str == '#')
+		else if (*flags.substr == '#')
 			flags.square = 1;
-		else if (ft_isdigit(*str) == 1 && *str != 0)
+		else if (ft_isdigit(*flags.substr) == 1 && *flags.substr != 0)
 		{
-			ft_numbers_in_flags(str, &flags);
-			while (ft_isdigit(*(str + 1)) == 1)
-				str++;
+			ft_numbers_in_flags(&flags);
+			while (ft_isdigit(*(flags.substr + 1)) == 1)
+				flags.substr++;
 		}
-		str++;
+		flags.substr++;
 	}
-	flags.param = *str;
-	ft_hub(flags, args, tot, str);
+	flags.param = *flags.substr;
+	ft_hub(flags, args, tot);
 }
 
 void	ft_init_struct(char *str, va_list args, t_tot *tot)
 {
 	t_flags	flags;
 
+	flags.substr = str;
 	flags.dot = 0;
 	flags.minus = 0;
 	flags.number = 0;
@@ -67,7 +55,7 @@ void	ft_init_struct(char *str, va_list args, t_tot *tot)
 	flags.spaplus = 0;
 	flags.param = 0;
 	flags.square = 0;
-	ft_manage_flags(str, args, flags, tot);
+	ft_manage_flags(args, flags, tot);
 }
 
 /* copies flags to a new string in order to manage them through fction */

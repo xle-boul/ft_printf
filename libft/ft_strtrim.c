@@ -6,11 +6,15 @@
 /*   By: xle-boul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 11:04:36 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/10/13 11:16:13 by xle-boul         ###   ########.fr       */
+/*   Updated: 2021/10/24 11:00:44 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/* removes the give set of characters from the beginning and
+the end of the string. It stops as soon as it encounters
+any other character along the way. */
 
 static int	ft_char_in_set(char c, char const *set)
 {

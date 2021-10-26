@@ -6,13 +6,13 @@
 /*   By: xle-boul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 11:48:44 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/10/24 23:39:26 by xle-boul         ###   ########.fr       */
+/*   Updated: 2021/10/26 12:10:21 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libprintf.h"
 
-void	ft_printf_x(t_flags flags, va_list args, t_tot *tot, char *str)
+void	ft_printf_x(t_flags flags, va_list args, t_tot *tot)
 {
 	t_char	c;
 

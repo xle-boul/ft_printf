@@ -1,0 +1,18 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    blabla.txt                                         :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: xle-boul <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/10/26 13:40:40 by xle-boul          #+#    #+#              #
+#    Updated: 2021/10/26 13:42:59 by xle-boul         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+fonction pour utiliser les flags:
+
+1/ Si un meme flag revient plusieurs fois, le DERNIER de la liste sera pris en compte;
+2/ le dernier chiffre arrivant avant le C definit le nombre de characters imprimes. Ceux etant vides
+	sont renvoyes en tant que ' ';
+3/ 

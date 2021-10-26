@@ -6,7 +6,7 @@
 #    By: xle-boul <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/19 18:54:09 by xle-boul          #+#    #+#              #
-#    Updated: 2021/10/25 13:49:58 by xle-boul         ###   ########.fr        #
+#    Updated: 2021/10/26 14:49:45 by xle-boul         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,7 @@ ft_check_flags.c		\
 ft_hub.c				\
 ft_putchar_fd_print.c	\
 ft_putstr_fd_print.c	\
+ft_flags_conditions.c
 
 
 NAME = ft_printf

@@ -6,7 +6,7 @@
 /*   By: xle-boul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 21:49:36 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/10/19 15:36:48 by xle-boul         ###   ########.fr       */
+/*   Updated: 2021/10/26 16:35:19 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list	*new_element;
 
-	if (!content)
-		return (NULL);
 	new_element = (t_list *)malloc(sizeof(t_list));
 	if (!new_element)
 		return (NULL);

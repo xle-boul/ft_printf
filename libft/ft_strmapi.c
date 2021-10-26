@@ -6,15 +6,13 @@
 /*   By: xle-boul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 15:15:07 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/10/19 12:11:22 by xle-boul         ###   ########.fr       */
+/*   Updated: 2021/10/24 11:33:53 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* je suis pas sur de bien capter la fonction, mais
-l'idee est d'appliquer une fonction f a chaque charactere
-de la string s */
+/* just like striteri but applied on a copy of the string */
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {

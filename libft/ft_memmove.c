@@ -6,7 +6,7 @@
 /*   By: xle-boul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 22:26:51 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/10/17 15:40:47 by xle-boul         ###   ########.fr       */
+/*   Updated: 2021/10/24 10:55:14 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /* 	copies the n first elements of source to destination.
 	Returns a pointer to the first element of destination.
-	Does not allow overlap */
+	Does not allow overlap - goes backwards */
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {

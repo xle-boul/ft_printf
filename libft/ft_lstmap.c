@@ -6,11 +6,13 @@
 /*   By: xle-boul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 16:29:55 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/10/19 16:30:01 by xle-boul         ###   ########.fr       */
+/*   Updated: 2021/10/24 10:54:19 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/* copies a list and applies the pointed function to the new one */
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {

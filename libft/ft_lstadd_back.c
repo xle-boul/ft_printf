@@ -6,11 +6,13 @@
 /*   By: xle-boul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 11:40:42 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/10/19 15:48:27 by xle-boul         ###   ########.fr       */
+/*   Updated: 2021/10/24 10:51:50 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/* adds an element at the end of the list */
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {

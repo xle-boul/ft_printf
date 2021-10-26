@@ -6,7 +6,7 @@
 /*   By: xle-boul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 14:26:16 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/10/21 10:51:42 by xle-boul         ###   ########.fr       */
+/*   Updated: 2021/10/19 18:49:58 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,5 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
-void	ft_putnbr_base_cap_fd(long int n, int base, int fd);
-void	ft_putnbr_base_low_fd(long int n, int base, int fd);
 
 #endif

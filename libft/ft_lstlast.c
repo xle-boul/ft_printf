@@ -6,11 +6,13 @@
 /*   By: xle-boul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 11:34:12 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/10/19 15:50:32 by xle-boul         ###   ########.fr       */
+/*   Updated: 2021/10/24 10:53:40 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/* points to the last element of a list */
 
 t_list	*ft_lstlast(t_list *lst)
 {
