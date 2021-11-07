@@ -6,7 +6,7 @@
 /*   By: xle-boul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 15:46:20 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/10/26 14:47:21 by xle-boul         ###   ########.fr       */
+/*   Updated: 2021/11/06 21:08:25 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,24 +17,36 @@
 int	ft_printf(const char *c, ...)
 {
 	va_list	args;
-	t_tot	*tot;
-	t_tot	tot_n;
+	t_tot	tot;
 
-	tot = &tot_n;
-	tot->n = 0;
+	tot.n = 0;
 	va_start (args, c);
-	ft_parse_string(c, args, tot);
+	ft_parse_string(c, args, &tot);
 	va_end (args);
-	return (tot_n.n);
+	return (tot.n);
+}
+
+void	ft_print_if_fields_wrong_order(t_flags flags, t_tot *tot)
+{
+	int	i;
+
+	i = 0;
+	ft_putchar_fd_print('%', 1, tot);
+	while (ft_what_char(flags.substr[i]) != 0 && flags.substr[i] != '\0')
+	{
+		ft_putchar_fd_print(flags.substr[i], 1, tot);
+		i++;
+	}
+	ft_putchar_fd_print(flags.substr[i], 1, tot);
 }
 
 int main()
 {
-	char	n[] = "cacasurtondoigt";
-	int		precision = 4;
+	// char	n[] = "cacasurtondoigt";
+	int		n = 45422;
 	
-	ft_printf("\n%d", ft_printf("%.10-13si\n", n));
-	ft_printf("\n--------\n");
-	printf("\n%d", printf("%4.8.-0123.0003si", n));
+	printf("\n%d", ft_printf("la valeur que l'on recherche est: %s %d", "cacasurtondoigt", n));
+	printf("\n--------\n");
+	printf("\n%d\n", printf("%12d$", n));
 	return (0);
 }

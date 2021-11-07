@@ -6,30 +6,40 @@
 /*   By: xle-boul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 11:48:49 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/10/26 13:30:01 by xle-boul         ###   ########.fr       */
+/*   Updated: 2021/10/28 21:59:14 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libprintf.h"
 
-void	ft_printf_s(t_flags flags, va_list args, t_tot *tot)
+char	*ft_s_trimmer(t_flags flags, t_tot *tot)
 {
-	t_char	c;
+	char	*dotstr;
 
-	c.i = 0;
-	c.str = va_arg(args, char *);
-	printf("%d, %d\n", flags.number, flags.high_num);
-	if (flags.number > 0 && flags.dot == 1 && flags.high_num != 0)
-	{
-		while (c.i < (int)ft_strlen(c.str) && c.i < flags.number)
-		{
-			ft_putchar_fd_print(c.str[c.i], 1, tot);
-			c.i++;
-		}
-		while (c.i < flags.number)
-		{
-			ft_putchar_fd_print(' ', 1, tot);
-			c.i++;
-		}
-	}
+	dotstr = (char *)malloc(sizeof(char) * (flags.dot_num + 1));
+	if (!dotstr)
+		return (NULL);
+	ft_strlcpy(dotstr, flags.str, (flags.dot_num + 1));
+	return (dotstr);
+}
+
+void	ft_s_hub(t_flags flags, va_list args, t_tot *tot)
+{
+	char	*s;
+
+	flags.str = va_arg(args, char *);
+	if (flags.dot == 1)
+		s = ft_s_trimmer(flags, tot);
+	if (flags.number == 0)
+		ft_s_number_is_zero(flags, tot, s);
+	else if (flags.number != 0 && flags.dot == 0 && flags.zemin == 0)
+		ft_s_num_flags_0(flags, tot, s);
+	else if (flags.number != 0 && flags.dot == 0 && flags.zemin == 1)
+		ft_s_num_dot_0_min_1(flags, tot, s);
+	else if (flags.number != 0 && flags.dot == 1 && flags.zemin == 0)
+		ft_s_num_dot_1_min_0(flags, tot, s);
+	else if (flags.number != 0 && flags.dot == 1 && flags.zemin == 1)
+		ft_s_num_dot_1_min_1(flags, tot, s);
+	if (flags.dot == 1)
+		free(s);
 }

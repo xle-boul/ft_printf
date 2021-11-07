@@ -6,7 +6,7 @@
 /*   By: xle-boul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 14:48:28 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/10/26 14:58:41 by xle-boul         ###   ########.fr       */
+/*   Updated: 2021/10/29 11:25:55 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,35 @@
 
 void	ft_numbers_in_flags(t_flags *flags)
 {
-	int	i;
-	int	temp;
-
-	i = 0;
-	flags->number = ft_atoi(flags->substr);
-	if (flags->high_num == 0)
-		flags->high_num = flags->number;
-	else if (flags->high_num != 0 && flags->high_num < flags->number)
-		flags->high_num = flags->number;
-	printf("%d %d\n", flags->number, flags->high_num);
+	if (*(flags->substr) == '.')
+	{
+		flags->substr++;
+		if (ft_isdigit(*(flags->substr)) == 1)
+			flags->dot_num = ft_atoi(flags->substr);
+		else
+			flags->dot_num = 0;
+	}
+	else if (*(flags->substr) != '.')
+	{
+		if (ft_isdigit(*(flags->substr)) == 1)
+			flags->number = ft_atoi(flags->substr);
+		else if (ft_isdigit(*(flags->substr)) == 0)
+			flags->dot_num = 0;
+	}
 }
 
-int	ft_dot_flag(t_flags flags, char *str)
+void	ft_flags_conditions(t_flags *flags)
 {
-	int	i;
-
-	printf("%c\n", *(str - 1 ));
-	return (i);
+	if (*(flags->substr) == '-')
+		flags->zemin = 1;
+	else if ((*(flags->substr) == '0' && ft_isdigit(*(flags->substr - 1))
+			!= 1 && flags->zemin != 1)
+		|| (flags->substr[0] == '0' && flags->zemin != 1))
+		flags->zemin = -1;
+	else if (*(flags->substr) == ' ' && flags->spaplus != 1)
+		flags->spaplus = -1;
+	else if (*(flags->substr) == '+')
+		flags->spaplus = 1;
+	else if (*(flags->substr) == '#')
+		flags->square = 1;
 }

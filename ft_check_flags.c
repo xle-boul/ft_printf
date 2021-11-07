@@ -6,7 +6,7 @@
 /*   By: xle-boul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 14:49:21 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/10/22 21:29:51 by xle-boul         ###   ########.fr       */
+/*   Updated: 2021/11/05 20:48:41 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,16 +48,32 @@ int	ft_what_flag(char c)
 	return (-1);
 }
 
-/* checks if a given string matches the flags -> libprntf.h */
+/* checks if a given string matches numbers from 1-9 -> libprntf.h */
 
-int	ft_what_flag_short(char c)
+int	ft_what_number(char c)
 {
 	t_char	j;
 
 	j.i = 0;
-	while (FLAGS_SHORT[j.i])
+	while (NUMBERS[j.i])
 	{
-		if (FLAGS_SHORT[j.i] == c)
+		if (NUMBERS[j.i] == c)
+		{
+			return (0);
+		}
+		j.i++;
+	}
+	return (-1);
+}
+
+int	ft_what_all(char c)
+{
+	t_char	j;
+
+	j.i = 0;
+	while (ALL[j.i])
+	{
+		if (ALL[j.i] == c)
 		{
 			return (0);
 		}
