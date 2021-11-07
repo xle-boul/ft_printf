@@ -6,26 +6,28 @@
 /*   By: xle-boul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 20:26:13 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/11/05 21:42:31 by xle-boul         ###   ########.fr       */
+/*   Updated: 2021/11/07 11:54:10 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libprintf.h"
 
-void	ft_fields_hub(t_flags flags, t_flags swtch, va_list args, t_tot *tot)
+void	ft_fields_hub(t_flags flags, va_list args, t_tot *tot)
 {
-	if (ft_fields_number(flags, swtch, tot) == 0)
+	int	i;
+
+	i = 0;
+	while (ft_what_char(flags.substr[i]) != 0)
+		i++;
+	if (flags.substr[i] == 's')
+		ft_manage_flags(args, flags, tot);
+	else if (ft_fields_order(flags, tot) == 0)
 		ft_manage_flags(args, flags, tot);
 	else
-		ft_print_if_fields_wrong_order(flags, tot);
+		ft_print_if_fields_wrong_order(flags, args, tot);
 }
 
-int	ft_fields_dot(t_flags flags, t_flags swtch, t_tot *tot)
-{
-	return (0);
-}
-
-int	ft_fields_number(t_flags flags, t_flags swtch, t_tot *tot)
+int	ft_fields_order(t_flags flags, t_tot *tot)
 {
 	int	i;
 

@@ -6,7 +6,7 @@
 /*   By: xle-boul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 12:17:36 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/10/28 21:49:26 by xle-boul         ###   ########.fr       */
+/*   Updated: 2021/11/07 11:44:15 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,10 @@ void	ft_s_number_is_zero(t_flags flags, t_tot *tot, char *dot)
 	c.i = 0;
 	if (flags.dot == 1)
 	{
+		if (flags.dot_num == 0)
+		{
+			return ;
+		}
 		while (c.i < (int)ft_strlen(dot))
 		{
 			ft_putchar_fd_print(dot[c.i], 1, tot);
@@ -92,19 +96,14 @@ void	ft_s_num_dot_1_min_0(t_flags flags, t_tot *tot, char *dot)
 	t_char	s;
 
 	s.i = 0;
-	s.j = 0;
-	if (flags.number > (int)ft_strlen(dot) && flags.dot_num != 0)
+	if (flags.number > (int)ft_strlen(dot))
 	{
 		while (s.i < flags.number - (int)ft_strlen(dot))
 		{
 			ft_putchar_fd_print(' ', 1, tot);
 			s.i++;
 		}
-		while (s.i + s.j < flags.number)
-		{
-			ft_putchar_fd_print(dot[s.j], 1, tot);
-			s.j++;
-		}
+		ft_s_number_is_zero(flags, tot, dot);
 	}
 	else if (flags.zemin == 0 && flags.number <= (int)ft_strlen(dot))
 		ft_s_number_is_zero(flags, tot, dot);
@@ -117,18 +116,13 @@ void	ft_s_num_dot_1_min_1(t_flags flags, t_tot *tot, char *dot)
 	t_char	s;
 
 	s.i = 0;
-	s.j = 0;
 	if (flags.number > (int)ft_strlen(dot))
 	{
-		while (s.i < (int)ft_strlen(dot))
-		{
-			ft_putchar_fd_print(flags.str[s.i], 1, tot);
-			s.i++;
-		}
-		while (s.i + s.j < flags.number)
+		ft_s_number_is_zero(flags, tot, dot);
+		while (s.i < flags.number - (int)ft_strlen(dot))
 		{
 			ft_putchar_fd_print(' ', 1, tot);
-			s.j++;
+			s.i++;
 		}
 	}
 	else if (flags.number <= (int)ft_strlen(dot))

@@ -6,7 +6,7 @@
 #    By: xle-boul <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/19 18:54:09 by xle-boul          #+#    #+#              #
-#    Updated: 2021/11/05 20:32:17 by xle-boul         ###   ########.fr        #
+#    Updated: 2021/11/07 13:32:47 by xle-boul         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,7 @@ ft_flags_conditions.c	\
 ft_printf_s_functions.c	\
 ft_printf_di_functions.c\
 ft_fields_order.c		\
+ft_itoa_printf.c		\
 
 
 NAME = ft_printf

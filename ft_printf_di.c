@@ -6,28 +6,53 @@
 /*   By: xle-boul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 11:39:47 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/11/06 21:06:44 by xle-boul         ###   ########.fr       */
+/*   Updated: 2021/11/07 16:20:39 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libprintf.h"
 
-void	ft_printf_di(t_flags flags, int d, t_tot *tot)
+void	ft_printf_di(t_flags flags, t_tot *tot)
 {
-	ft_putnbr_fd_print(d, 1, tot);
+	int	i;
+
+	i = 0;
+	while (flags.str[i] != '\0')
+	{
+		ft_putchar_fd_print(flags.str[i], 1, tot);
+		i++;
+	}
 }
 
-void	ft_di_hub(t_flags flags, va_list args, t_tot *tot)
+void	ft_di_hub(t_flags flags, t_char d, t_tot *tot)
+{
+	if (!flags.str)
+		return ;
+	if (flags.number == 0 && flags.spaplus == 0 && flags.zemin == 0)
+		ft_printf_di(flags, tot);
+	else if (flags.spaplus != 0 && flags.dot == 0 && flags.zemin == 0)
+	{
+		flags.number = ft_di_spaplus(flags, d, tot);
+		ft_di_number(flags, d, tot);
+	}
+	else if (flags.zemin != 0)
+		ft_di_zemin(flags, d, tot);
+	else if (flags.dot != 0)
+	{
+		if (flags.dot_num > d.len)
+			ft_di_precision_1(flags, d, tot);
+		else if (flags.dot_num <= d.len)
+			ft_di_precision_2(flags, d, tot);
+	}
+	free(flags.str);
+}
+
+void	ft_di_setup(t_flags flags, va_list args, t_tot *tot)
 {
 	t_char	d;
 
 	d.count = va_arg(args, int);
-	flags.str = ft_itoa(d.count);
-	if (!flags.str)
-		return ;
-	if (flags.number == 0 && flags.spaplus == 0 && flags.zemin == 0)
-		ft_printf_di(flags, d.count, tot);
-	if (flags.number != 0)
-		ft_test_di(flags, d, tot);
-	free(flags.str);
+	d.len = (int)ft_strlen(flags.str);
+	flags.str = ft_itoa_printf(d.count);
+	ft_di_hub(flags, d, tot);
 }

@@ -6,11 +6,14 @@
 /*   By: xle-boul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 11:48:49 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/10/28 21:59:14 by xle-boul         ###   ########.fr       */
+/*   Updated: 2021/11/07 11:37:30 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libprintf.h"
+
+// this function trims the argument to the proper size, according to
+// precision's value. makes it easier to then print
 
 char	*ft_s_trimmer(t_flags flags, t_tot *tot)
 {
@@ -22,6 +25,9 @@ char	*ft_s_trimmer(t_flags flags, t_tot *tot)
 	ft_strlcpy(dotstr, flags.str, (flags.dot_num + 1));
 	return (dotstr);
 }
+
+// this function redirects to the proper printing function, depending
+// on different cases
 
 void	ft_s_hub(t_flags flags, va_list args, t_tot *tot)
 {

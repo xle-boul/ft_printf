@@ -6,7 +6,7 @@
 /*   By: xle-boul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 11:39:20 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/11/05 20:50:30 by xle-boul         ###   ########.fr       */
+/*   Updated: 2021/11/07 11:59:52 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,12 @@ void	ft_manage_flags(va_list args, t_flags flags, t_tot *tot)
 		if (*flags.substr == '.')
 		{
 			flags.dot = 1;
-			ft_numbers_in_flags(&flags);
-			while (ft_isdigit(*(flags.substr + 1)) == 1)
-				flags.substr++;
+			if (ft_isdigit(*(flags.substr + 1)) == 1)
+			{			
+				ft_numbers_in_flags(&flags);
+				while (ft_isdigit(*(flags.substr + 1)) == 1)
+					flags.substr++;
+			}
 		}
 		else if (ft_isdigit(*flags.substr) == 1 && *flags.substr != '0')
 		{
@@ -42,7 +45,6 @@ void	ft_manage_flags(va_list args, t_flags flags, t_tot *tot)
 void	ft_init_struct(char *str, va_list args, t_tot *tot)
 {
 	t_flags	flags;
-	t_flags	swtch;
 
 	flags.substr = str;
 	flags.dot = 0;
@@ -51,12 +53,8 @@ void	ft_init_struct(char *str, va_list args, t_tot *tot)
 	flags.spaplus = 0;
 	flags.param = 0;
 	flags.square = 0;
-	swtch.dot = 0;
-	swtch.zemin = 0;
-	swtch.spaplus = 0;
-	swtch.square = 0;
-	swtch.number = 0;
-	ft_fields_hub(flags, swtch, args, tot);
+	ft_manage_flags(args, flags, tot);
+	// ft_fields_hub(flags, args, tot);
 }
 
 /* copies flags to a new string in order to manage them through fction */
