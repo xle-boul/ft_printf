@@ -42,13 +42,18 @@ void	ft_di_number(t_flags flags, t_char d, t_tot *tot)
 
 int	ft_di_spaplus(t_flags flags, t_char d, t_tot *tot)
 {
-	if (flags.spaplus != 0 && d.count > 0)
+	if (d.count > 0)
 	{
 		if (flags.spaplus == -1)
+		{
 			ft_putchar_fd_print(' ', 1, tot);
+			return ((flags.number - 1));
+		}
 		else if (flags.spaplus == 1)
+		{
 			ft_putchar_fd_print('+', 1, tot);
-		return (flags.number - 1);
+			return ((flags.number - 1));
+		}
 	}
 	return (flags.number);
 }
@@ -56,9 +61,9 @@ int	ft_di_spaplus(t_flags flags, t_char d, t_tot *tot)
 void	ft_di_zemin(t_flags flags, t_char d, t_tot *tot)
 {
 	d.i = 0;
-	if (d.count >= 0)
-		flags.number = ft_di_spaplus(flags, d, tot);
-	else if (d.count < 0)
+	if (flags.zemin != 0)
+		flags.number--;
+	if (d.count < 0)
 	{
 		ft_putchar_fd_print('-', 1, tot);
 		flags.number--;
@@ -67,41 +72,75 @@ void	ft_di_zemin(t_flags flags, t_char d, t_tot *tot)
 		ft_printf_di(flags, tot);
 	while (d.i + (int)ft_strlen(flags.str) < flags.number)
 	{
-		if (flags.zemin == 0)
+		if (flags.zemin == 0 || (flags.zemin == -1 && flags.dot == 1))
 			ft_putchar_fd_print(' ', 1, tot);
-		else if (flags.zemin == -1)
+		else if (flags.zemin == -1 && flags.dot == 0)
 			ft_putchar_fd_print('0', 1, tot);
 		else if (flags.zemin == 1)
 			ft_putchar_fd_print(' ', 1, tot);
 		d.i++;
 	}
+	if (d.count >= 0)
+		ft_di_spaplus(flags, d, tot);
 	if (flags.zemin != 1)
 		ft_printf_di(flags, tot);
 }
 
+// without flag minus
+
 void	ft_di_precision_1(t_flags flags, t_char d, t_tot *tot)
 {
-	if (flags.dot_num > d.len)
+	d.i = flags.number;
+	d.j = flags.dot_num;
+	if (flags.dot != 0 && flags.zemin != 1)
 	{
 		if (d.count > 0)
 		{
-			while (flags.number-- > flags.dot_num)
+			while (d.i-- > d.j)
 				ft_putchar_fd_print(' ', 1, tot);
 		}
 		else if (d.count < 0)
 		{
-			while (flags.number-- > flags.dot_num + 1)
+			while (d.i-- > d.j)
 				ft_putchar_fd_print(' ', 1, tot);
 			ft_putchar_fd_print('-', 1, tot);
-			flags.number--;
+			d.i--;
 		}
-		while (flags.number-- >= d.len)
+		if (flags.spaplus == 1)
+			ft_di_spaplus(flags, d, tot);
+		while (d.j-- > d.len)
 			ft_putchar_fd_print('0', 1, tot);
 		ft_printf_di(flags, tot);
 	}
 }
 
+// with flag minus
+
 void	ft_di_precision_2(t_flags flags, t_char d, t_tot *tot)
 {
-	return ;
+	d.i = flags.number;
+	d.j = flags.dot_num;
+	if (flags.spaplus == 1)
+		d.i = ft_di_spaplus(flags, d, tot);
+	if (flags.dot != 0 && flags.zemin == 1)
+	{
+		if (d.count < 0)
+		{
+			ft_putchar_fd_print('-', 1, tot);
+			d.i--;
+		}
+		while (d.j-- > d.len)
+			ft_putchar_fd_print('0', 1, tot);
+		ft_printf_di(flags, tot);
+		if (d.count < 0)
+		{
+			while (d.i-- > flags.dot_num + 1)
+				ft_putchar_fd_print(' ', 1, tot);
+		}
+		else if (d.count > 0)
+		{
+			while (d.i-- > flags.dot_num)
+				ft_putchar_fd_print(' ', 1, tot);
+		}
+	}
 }
