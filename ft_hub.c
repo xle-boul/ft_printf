@@ -6,7 +6,7 @@
 /*   By: xle-boul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 21:09:52 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/11/07 14:23:08 by xle-boul         ###   ########.fr       */
+/*   Updated: 2021/11/09 16:12:28 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_hub(t_flags flags, va_list args, t_tot *tot)
 	if (flags.param == 'X')
 		ft_printf_cap_x(flags, args, tot);
 	if (flags.param == 'u')
-		ft_printf_u(flags, args, tot);
+		ft_u_setup(flags, args, tot);
 	if (flags.param == 'p')
 		ft_printf_p(flags, args, tot);
 	if (flags.param == 'd' || flags.param == 'i')

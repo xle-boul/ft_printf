@@ -6,7 +6,7 @@
 /*   By: xle-boul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 23:28:45 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/10/24 10:56:56 by xle-boul         ###   ########.fr       */
+/*   Updated: 2021/11/09 11:25:56 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ typedef struct s_len
 	size_t	j;
 	size_t	len;
 	size_t	n;
-	size_t	count;
+	size_t	ct;
 	size_t	i;
 }			t_len;
 
@@ -28,7 +28,7 @@ static int	ft_count(char const *s, char c)
 {
 	t_len	n;
 
-	n.count = 0;
+	n.ct = 0;
 	n.i = 0;
 	if (*s == '\0')
 		return (0);
@@ -39,11 +39,11 @@ static int	ft_count(char const *s, char c)
 		else if (n.i == 0)
 		{
 			n.i = 1;
-			n.count++;
+			n.ct++;
 		}
 		s++;
 	}
-	return (n.count);
+	return (n.ct);
 }
 
 static int	ft_word(char const *s2, char c, size_t i)

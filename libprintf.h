@@ -6,14 +6,14 @@
 /*   By: xle-boul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 15:49:49 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/11/07 16:21:19 by xle-boul         ###   ########.fr       */
+/*   Updated: 2021/11/09 16:25:11 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBPRINTF_H
 # define LIBPRINTF_H
 
-# include "libft.h"
+# include "./libft/libft.h"
 # include <stdarg.h>
 
 # define ALL "0# +-123456789."
@@ -37,7 +37,7 @@ typedef struct s_char
 	char				c;
 	long int			li;
 	unsigned int		ui;
-	int					count;
+	int					ct;
 }			t_char;
 typedef struct s_flags
 {
@@ -54,10 +54,10 @@ typedef struct s_flags
 
 void	ft_printf_cap_x(t_flags flags, va_list args, t_tot *tot);
 void	ft_printf_x(t_flags flags, va_list args, t_tot *tot);
-void	ft_printf_di(t_flags flags, t_tot *tot);
+void	ft_printf_di(t_flags flags, t_char d, t_tot *tot);
 void	ft_printf_p(t_flags flags, va_list args, t_tot *tot);
 void	ft_printf_s(t_flags flags, va_list args, t_tot *tot);
-void	ft_printf_u(t_flags flags, va_list args, t_tot *tot);
+void	ft_printf_u(t_flags flags, t_char d, t_tot *tot);
 void	ft_printf_c(t_flags flags, va_list args, t_tot *tot);
 int		ft_what_char(char c);
 int		ft_what_flag(char c);
@@ -77,7 +77,6 @@ void	ft_putstr_fd_print(char *s, int fd, size_t len, t_tot *tot);
 void	ft_putnbr_fd_print_u(unsigned int n, int fd, t_tot *tot);
 void	ft_numbers_in_flags(t_flags *flags);
 void	ft_flags_conditions(t_flags *flags);
-void	ft_di_setup(t_flags flags, va_list args, t_tot *tot);
 void	ft_s_hub(t_flags flags, va_list args, t_tot *tot);
 void	ft_s_number_is_zero(t_flags flags, t_tot *tot, char *dot);
 void	ft_s_num_flags_0(t_flags flags, t_tot *tot, char *dot);
@@ -85,14 +84,24 @@ void	ft_s_num_dot_0_min_1(t_flags flags, t_tot *tot, char *dot);
 void	ft_s_num_dot_1_min_0(t_flags flags, t_tot *tot, char *dot);
 void	ft_s_num_dot_1_min_1(t_flags flags, t_tot *tot, char *dot);
 char	*ft_itoa_printf(int n);
+char	*ft_itoa_printf_u(unsigned int n);
+void	ft_di_setup(t_flags flags, va_list args, t_tot *tot);
+void	ft_di_padding(int s, int start, int stop, t_tot *tot);
 void	ft_di_hub(t_flags flags, t_char d, t_tot *tot);
-void	ft_di_number(t_flags flags, t_char d, t_tot *tot);
-void	ft_di_zemin(t_flags flags, t_char d, t_tot *tot);
-int		ft_di_spaplus(t_flags flags, t_char d, t_tot *tot);
-void	ft_di_precision_1(t_flags flags, t_char d, t_tot *tot);
-void	ft_di_precision_2(t_flags flags, t_char d, t_tot *tot);
-void	ft_print_if_fields_wrong_order(t_flags flags, va_list args, t_tot *tot);
-void	ft_fields_hub(t_flags flags, va_list args, t_tot *tot);
-int		ft_fields_order(t_flags flags, t_tot *tot);
+void	ft_di_001(t_flags flags, t_char d, t_tot *tot);
+void	ft_di_100_1m10(t_flags flags, t_char d, t_tot *tot);
+void	ft_di_110(t_flags flags, t_char d, t_tot *tot);
+void	ft_di_111(t_flags flags, t_char d, t_tot *tot);
+void	ft_di_101(t_flags flags, t_char d, t_tot *tot);
+int		ft_di_spaplus(t_flags flags, t_char d, int i, t_tot *tot);
+void	ft_u_setup(t_flags flags, va_list args, t_tot *tot);
+void	ft_u_padding(int s, int start, int stop, t_tot *tot);
+void	ft_u_hub(t_flags flags, t_char d, t_tot *tot);
+void	ft_u_001(t_flags flags, t_char d, t_tot *tot);
+void	ft_u_100_1m10(t_flags flags, t_char d, t_tot *tot);
+void	ft_u_110(t_flags flags, t_char d, t_tot *tot);
+void	ft_u_111(t_flags flags, t_char d, t_tot *tot);
+void	ft_u_101(t_flags flags, t_char d, t_tot *tot);
+int		ft_u_spaplus(t_flags flags, t_char d, int i, t_tot *tot);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: xle-boul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 15:46:20 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/11/08 17:00:30 by xle-boul         ###   ########.fr       */
+/*   Updated: 2021/11/09 16:32:16 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,18 @@ int	ft_printf(const char *c, ...)
 int main()
 {
 	// char	n[] = "cacasurtondoigt";
-	int		n = 1232;
-	
-	ft_printf("\n%d", ft_printf("% +-.4s - %015.3d$", "trucmachin", n));
-	printf("\n------------------------------\n");
-	printf("\n%d", printf("% +-.4s - %015.3d$", "trucmachin", n));
+	int	n;
+	int	k;
+	int	i;
+	unsigned int	m;
+
+									m = -12341484521;
+	n = ft_printf("% +-12.4 30.8s +++ %.10x$", "cacasurtondoigt", m);
+	ft_printf("\n%d\n", n);
+	while (n--)
+		ft_printf("-");
+	ft_printf("\n");
+	k = printf("% +-12.4 30.8s +++ %30.20x$", "cacasurtondoigt", m);
+	ft_printf("\n%d\n", k);
 	return (0);
 }
