@@ -6,7 +6,7 @@
 /*   By: xle-boul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 11:39:47 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/11/09 16:23:27 by xle-boul         ###   ########.fr       */
+/*   Updated: 2021/11/09 21:08:25 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,5 +99,6 @@ void	ft_u_setup(t_flags flags, va_list args, t_tot *tot)
 	d.ui = va_arg(args, unsigned int);
 	flags.str = ft_itoa_printf_u(d.ui);
 	d.len = (int)ft_strlen(flags.str);
-	ft_di_hub(flags, d, tot);
+	ft_u_hub(flags, d, tot);
+	free (flags.str);
 }

@@ -6,7 +6,7 @@
 /*   By: xle-boul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 12:10:04 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/11/09 16:19:12 by xle-boul         ###   ########.fr       */
+/*   Updated: 2021/11/09 19:57:45 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	ft_u_100_1m10(t_flags flags, t_char d, t_tot *tot)
 	{
 		if (flags.spaplus != 0 && d.ui > 0)
 			ft_u_spaplus(flags, d, d.i, tot);
-		ft_di_padding(0, d.i, (flags.number - d.len), tot);
+		ft_u_padding(0, d.i, (flags.number - d.len), tot);
 	}
 	ft_printf_u(flags, d, tot);
 }

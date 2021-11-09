@@ -6,7 +6,7 @@
 /*   By: xle-boul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 11:39:47 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/11/09 16:00:18 by xle-boul         ###   ########.fr       */
+/*   Updated: 2021/11/09 21:08:13 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,4 +100,5 @@ void	ft_di_setup(t_flags flags, va_list args, t_tot *tot)
 	flags.str = ft_itoa_printf(d.ct);
 	d.len = (int)ft_strlen(flags.str);
 	ft_di_hub(flags, d, tot);
+	free (flags.str);
 }
