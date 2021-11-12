@@ -6,7 +6,7 @@
 /*   By: xle-boul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 15:49:49 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/11/09 23:35:03 by xle-boul         ###   ########.fr       */
+/*   Updated: 2021/11/12 13:43:35 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,8 @@ void	ft_putstr_fd_print(char *s, int fd, size_t len, t_tot *tot);
 void	ft_putnbr_fd_print_u(unsigned int n, int fd, t_tot *tot);
 void	ft_numbers_in_flags(t_flags *flags);
 void	ft_flags_conditions(t_flags *flags);
+void	ft_padding(int s, int start, int stop, t_tot *tot);
+int		ft_spaplus(t_flags flags, t_char d, int i, t_tot *tot);
 void	ft_s_hub(t_flags flags, va_list args, t_tot *tot);
 void	ft_s_number_is_zero(t_flags flags, t_tot *tot, char *dot);
 void	ft_s_num_flags_0(t_flags flags, t_tot *tot, char *dot);
@@ -87,40 +89,32 @@ char	*ft_itoa_printf_u(unsigned int n);
 char	*ft_itoa_printf_x(unsigned long int n, t_char d, t_flags flags);
 char	*ft_itoa_printf_p(unsigned long int n, t_char d, t_flags flags);
 void	ft_di_setup(t_flags flags, va_list args, t_tot *tot);
-void	ft_di_padding(int s, int start, int stop, t_tot *tot);
 void	ft_di_hub(t_flags flags, t_char d, t_tot *tot);
 void	ft_di_001(t_flags flags, t_char d, t_tot *tot);
 void	ft_di_100_1m10(t_flags flags, t_char d, t_tot *tot);
 void	ft_di_110(t_flags flags, t_char d, t_tot *tot);
 void	ft_di_111(t_flags flags, t_char d, t_tot *tot);
 void	ft_di_101(t_flags flags, t_char d, t_tot *tot);
-int		ft_di_spaplus(t_flags flags, t_char d, int i, t_tot *tot);
 void	ft_u_setup(t_flags flags, va_list args, t_tot *tot);
-void	ft_u_padding(int s, int start, int stop, t_tot *tot);
 void	ft_u_hub(t_flags flags, t_char d, t_tot *tot);
 void	ft_u_001(t_flags flags, t_char d, t_tot *tot);
 void	ft_u_100_1m10(t_flags flags, t_char d, t_tot *tot);
 void	ft_u_110(t_flags flags, t_char d, t_tot *tot);
 void	ft_u_111(t_flags flags, t_char d, t_tot *tot);
 void	ft_u_101(t_flags flags, t_char d, t_tot *tot);
-int		ft_u_spaplus(t_flags flags, t_char d, int i, t_tot *tot);
 void	ft_x_setup(t_flags flags, va_list args, t_tot *tot);
-void	ft_x_padding(int s, int start, int stop, t_tot *tot);
 void	ft_x_hub(t_flags flags, t_char d, t_tot *tot);
 void	ft_x_001(t_flags flags, t_char d, t_tot *tot);
 void	ft_x_100_1m10(t_flags flags, t_char d, t_tot *tot);
 void	ft_x_110(t_flags flags, t_char d, t_tot *tot);
 void	ft_x_111(t_flags flags, t_char d, t_tot *tot);
 void	ft_x_101(t_flags flags, t_char d, t_tot *tot);
-int		ft_x_spaplus(t_flags flags, t_char d, int i, t_tot *tot);
 void	ft_p_setup(t_flags flags, va_list args, t_tot *tot);
-void	ft_p_padding(int s, int start, int stop, t_tot *tot);
 void	ft_p_hub(t_flags flags, t_char d, t_tot *tot);
 void	ft_p_001(t_flags flags, t_char d, t_tot *tot);
 void	ft_p_100_1m10(t_flags flags, t_char d, t_tot *tot);
 void	ft_p_110(t_flags flags, t_char d, t_tot *tot);
 void	ft_p_111(t_flags flags, t_char d, t_tot *tot);
 void	ft_p_101(t_flags flags, t_char d, t_tot *tot);
-int		ft_p_spaplus(t_flags flags, t_char d, int i, t_tot *tot);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: xle-boul <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/19 18:54:09 by xle-boul          #+#    #+#              #
-#    Updated: 2021/11/09 23:31:43 by xle-boul         ###   ########.fr        #
+#    Updated: 2021/11/12 13:40:01 by xle-boul         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,7 @@ ft_hub.c								\
 ./x/ft_x_hub.c							\
 ./p/ft_printf_p_functions.c				\
 ./p/ft_p_hub.c							\
+./libprintf/ft_common_functions.c		\
 
 NAME = ft_printf
 
