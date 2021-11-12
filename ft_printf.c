@@ -6,7 +6,7 @@
 /*   By: xle-boul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 15:46:20 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/11/09 23:50:10 by xle-boul         ###   ########.fr       */
+/*   Updated: 2021/11/12 10:57:12 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,12 @@ int main()
 	unsigned int	m;
 
 									m = -484521;
-	n = ft_printf("%-.4s +++ %X +++ %c$", "cacasurtondoigt", m, 'm');
+	n = ft_printf("%-.4s +++ %-20.15X +++ %-10c$", "cacasurtondoigt", m, 'm');
 	ft_printf("\n%d\n", n);
 	while (n--)
 		ft_printf("-");
 	ft_printf("\n");
-	k = printf("%-.4s +++ %X +++ %10c$", "cacasurtondoigt", m, 'm');
+	k = printf("%-.4s +++ %-20.15X +++ %-10c$", "cacasurtondoigt", m, 'm');
 	ft_printf("\n%d\n", k);
 	return (0);
 }

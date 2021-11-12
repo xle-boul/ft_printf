@@ -6,7 +6,7 @@
 /*   By: xle-boul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 11:39:47 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/11/09 23:35:25 by xle-boul         ###   ########.fr       */
+/*   Updated: 2021/11/11 00:01:02 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ int	ft_p_spaplus(t_flags flags, t_char d, int i, t_tot *tot)
 
 void	ft_p_padding(int s, int start, int stop, t_tot *tot)
 {
+	if (start >= stop)
+		return ;
 	if (s == 1)
 	{
 		while (start < stop)
@@ -97,7 +99,7 @@ void	ft_p_setup(t_flags flags, va_list args, t_tot *tot)
 	t_char	d;
 
 	d.lui = va_arg(args, unsigned long int);
-	flags.str = ft_itoa_printf_p(d.lui, d, flags);
+	flags.str = ft_itoa_printf_x(d.lui, d, flags);
 	d.len = (int)ft_strlen(flags.str);
 	ft_p_hub(flags, d, tot);
 	free (flags.str);

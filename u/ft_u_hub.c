@@ -6,7 +6,7 @@
 /*   By: xle-boul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 11:39:47 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/11/09 21:08:25 by xle-boul         ###   ########.fr       */
+/*   Updated: 2021/11/11 00:02:07 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ int	ft_u_spaplus(t_flags flags, t_char d, int i, t_tot *tot)
 
 void	ft_u_padding(int s, int start, int stop, t_tot *tot)
 {
+	if (start >= stop)
+		return ;
 	if (s == 1)
 	{
 		while (start < stop)

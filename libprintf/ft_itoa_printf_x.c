@@ -6,7 +6,7 @@
 /*   By: xle-boul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 21:41:51 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/11/09 23:35:49 by xle-boul         ###   ########.fr       */
+/*   Updated: 2021/11/10 23:27:55 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,8 @@ char	*ft_itoa_printf_x(unsigned long int n, t_char d, t_flags flags)
 	{
 		if ((n % 16) < 10)
 			str[d.j] = (n % 16) + 48;
-		else if ((n % 16) >= 10 && flags.param == 'x')
+		else if ((n % 16) >= 10 && flags.param == 'x'
+			|| (n % 16) >= 10 && flags.param == 'p')
 			str[d.j] = (n % 16) + 87;
 		else if ((n % 16) >= 10 && flags.param == 'X')
 			str[d.j] = (n % 16) + 55;
@@ -53,28 +54,6 @@ char	*ft_itoa_printf_x(unsigned long int n, t_char d, t_flags flags)
 		d.j--;
 	}
 	return (str);
-}
-
-char	*ft_itoa_printf_p(unsigned long int n, t_char d, t_flags flags)
-{
-	d.str = (char *)malloc(sizeof(char) * (ft_find_amount_of_dgts_pf_x(n) + 3));
-	if (!d.str)
-		return (NULL);
-	d.j = ft_find_amount_of_dgts_pf_x(n);
-	d.str[d.j] = '\0';
-	d.j--;
-	if (n == 0)
-		d.str[0] = '0';
-	while (n > 0)
-	{
-		if ((n % 16) < 10)
-			d.str[d.j] = (n % 16) + 48;
-		else if ((n % 16) >= 10 && flags.param == 'p')
-			d.str[d.j] = (n % 16) + 87;
-		n /= 16;
-		d.j--;
-	}
-	return (d.str);
 }
 
 // int main()

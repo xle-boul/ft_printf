@@ -6,7 +6,7 @@
 /*   By: xle-boul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 11:39:47 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/11/09 23:00:16 by xle-boul         ###   ########.fr       */
+/*   Updated: 2021/11/11 00:20:08 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,30 +26,12 @@ void	ft_printf_x(t_flags flags, t_char d, t_tot *tot)
 	}
 }
 
-// defines if flags 0 or + are used and prints accordingly
-
-int	ft_x_spaplus(t_flags flags, t_char d, int i, t_tot *tot)
-{
-	if (d.ui > 0)
-	{
-		if (flags.spaplus == -1)
-		{
-			ft_putchar_fd_print(' ', 1, tot);
-			return (i - 1);
-		}
-		else if (flags.spaplus == 1)
-		{
-			ft_putchar_fd_print('+', 1, tot);
-			return (i - 1);
-		}
-	}
-	return (i);
-}
-
 // takes care of the padding caused by flags or precision
 
 void	ft_x_padding(int s, int start, int stop, t_tot *tot)
 {
+	if (start >= stop)
+		return ;
 	if (s == 1)
 	{
 		while (start < stop)
