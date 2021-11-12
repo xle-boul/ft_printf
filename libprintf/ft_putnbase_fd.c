@@ -6,7 +6,7 @@
 /*   By: xle-boul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 12:47:22 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/11/09 20:46:32 by xle-boul         ###   ########.fr       */
+/*   Updated: 2021/11/12 13:25:26 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,9 +69,4 @@ void	ft_putnbr_fd_print(int n, int fd, t_tot *tot)
 	if (nb >= 10)
 		ft_putnbr_fd_print(nb / 10, fd, tot);
 	ft_putchar_fd_print(nb % 10 + 48, fd, tot);
-}
-
-int	ft_convert_to_hex(unsigned long int n)
-{
-	return (n);
 }

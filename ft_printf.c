@@ -6,7 +6,7 @@
 /*   By: xle-boul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 15:46:20 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/11/12 10:57:12 by xle-boul         ###   ########.fr       */
+/*   Updated: 2021/11/12 13:26:53 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,21 +26,22 @@ int	ft_printf(const char *c, ...)
 	return (tot.n);
 }
 
-int main()
+int	main(void)
 {
-	// char	n[] = "cacasurtondoigt";
-	int	n;
-	int	k;
-	int	i;
+	int				n;
+	int				k;
+	int				i;
 	unsigned int	m;
 
-									m = -484521;
-	n = ft_printf("%-.4s +++ %-20.15X +++ %-10c$", "cacasurtondoigt", m, 'm');
+	m = -484521;
+	n = ft_printf("%-.4s +++ %-+ 20.00015p +++ %-+ 20.15X +++ %+- 10c$",
+			"cacasurtondoigt", &m, m, 'm');
 	ft_printf("\n%d\n", n);
 	while (n--)
 		ft_printf("-");
 	ft_printf("\n");
-	k = printf("%-.4s +++ %-20.15X +++ %-10c$", "cacasurtondoigt", m, 'm');
+	k = printf("%-.4s +++ %-+ 20.00015p +++ %-+ 20.15X +++ %+- 10c$",
+			"cacasurtondoigt", &m, m, 'm');
 	ft_printf("\n%d\n", k);
 	return (0);
 }
