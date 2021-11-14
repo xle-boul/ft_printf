@@ -48,7 +48,7 @@ OBJS_DIR = sources/objs/
 SRCS_DIR = sources/
 OBJS = *.o
 
-$(NAME):  $(LIB) $(OBJS_DIR)
+$(NAME): $(OBJS_DIR) $(LIB)
 	@ar r $(NAME) $(LIB_OBJS_DIR)$(OBJS) $(OBJS_DIR)$(OBJS)
 	@echo "$(NAME), created!"
 

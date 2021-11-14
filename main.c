@@ -38,6 +38,10 @@ int main()
 	char	*t = "0x12345678";
 	char	*u = "-0";
 
+	ft_printf("%0+-25.20d$", 4);
+	ft_printf("\n\n");
+	printf("%0+-25.20d$\n", 4);
+
 	printf("fake = %d\ntrue = %d\n\n", ft_printf("Simple input test\n"), printf("Simple input test\n")); //
 	printf("fake = %d\ntrue = %d\n\n", ft_printf("1|%i, %d, %d, %d, %d, %s, %c, %d, %u, %x, %X\n", i, j, k, l, m, n, c, c, j, j, j), printf("1|%i, %d, %d, %d, %d, %s, %c, %d, %u, %x, %X\n", i, j, k, l, m, n, c, c, j, j, j)); //
 	printf("fake = %d\ntrue = %d\n\n", ft_printf("2|%0i, %0d, %0d, %0d, %0d, %0d, %0d, %0d\n", i, j, k, l, m, c, e, d), printf("2|%0i, %0d, %0d, %0d, %0d, %0d, %0d, %0d\n", i, j, k, l, m, c, e, d)); //

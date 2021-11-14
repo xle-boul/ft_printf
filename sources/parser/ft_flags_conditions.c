@@ -19,15 +19,13 @@ void	ft_numbers_in_flags(t_flags *flags)
 		flags->substr++;
 		if (ft_isdigit(*(flags->substr)) == 1)
 			flags->dot_num = ft_atoi(flags->substr);
-		else
+		else if (ft_isdigit(*(flags->substr) == 0))
 			flags->dot_num = 0;
 	}
 	else if (*(flags->substr) != '.')
 	{
 		if (ft_isdigit(*(flags->substr)) == 1)
 			flags->number = ft_atoi(flags->substr);
-		else if (ft_isdigit(*(flags->substr)) == 0)
-			flags->dot_num = 0;
 	}
 }
 

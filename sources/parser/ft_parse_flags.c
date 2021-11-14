@@ -94,7 +94,7 @@ void	ft_parse_string(const char *c, va_list args, t_tot *tot)
 				n.ct++;
 				c++;
 			}
-			ft_isolate_flags((c - n.ct), (n.ct + 1), args, tot);
+			ft_isolate_flags((c - n.ct), (n.ct), args, tot);
 		}
 		else
 		{
