@@ -33,9 +33,11 @@ void	ft_x_100_1m10(t_flags flags, t_char d, t_tot *tot)
 void	ft_x_110(t_flags flags, t_char d, t_tot *tot)
 {
 	d.i = 0;
-	ft_x_001(flags, d, tot);
+	if (flags.spaplus != 0)
+		flags.number = ft_spaplus(flags, d, flags.dot_num, tot);
 	flags.number -= d.len;
 	ft_padding(1, d.i, flags.number, tot);
+	ft_printf_x(flags, d, tot);
 }
 
 void	ft_x_111(t_flags flags, t_char d, t_tot *tot)

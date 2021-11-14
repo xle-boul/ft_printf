@@ -53,16 +53,19 @@ void	ft_di_100_1m10(t_flags flags, t_char d, t_tot *tot)
 void	ft_di_110(t_flags flags, t_char d, t_tot *tot)
 {
 	d.i = 0;
-	ft_di_001(flags, d, tot);
 	if (d.ct < 0)
+	{
+		ft_putchar_fd_print('-', 1, tot);
 		flags.number -= (d.len + 1);
+	}
 	else if (d.ct >= 0)
 	{
 		if (flags.spaplus != 0)
-			flags.number--;
+			flags.number = ft_spaplus(flags, d, flags.dot_num, tot);
 		flags.number -= d.len;
 	}
 	ft_padding(1, d.i, flags.number, tot);
+	ft_printf_di(flags, d, tot);
 }
 
 void	ft_di_111(t_flags flags, t_char d, t_tot *tot)
@@ -95,7 +98,7 @@ void	ft_di_101(t_flags flags, t_char d, t_tot *tot)
 		flags.number--;
 	if (flags.dot_num > d.len)
 		ft_padding(1, d.i, (flags.number - flags.dot_num), tot);
-	else if (flags.dot_num <= d.len)
+	else if (flags.dot_num <= d.len)	
 		ft_padding(1, d.i, (flags.number - d.len), tot);
 	if (d.ct < 0)
 		ft_putchar_fd_print('-', 1, tot);

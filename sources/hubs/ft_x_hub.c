@@ -19,7 +19,7 @@ void	ft_printf_x(t_flags flags, t_char d, t_tot *tot)
 	int	i;
 
 	i = 0;
-	if (flags.dot == 1 && flags.dot_num == 0 && d.lui == 0)
+	if (flags.dot == 1 && d.lui == 0)
 	{
 		ft_putchar_fd_print(' ', 1, tot);
 		return ;
@@ -61,7 +61,10 @@ void	ft_x_setup(t_flags flags, va_list args, t_tot *tot)
 
 	d.lui = va_arg(args, unsigned long int);
 	flags.str = ft_itoa_printf_x(d.lui, d, flags);
-	d.len = (int)ft_strlen(flags.str);
+	if (d.lui == 0 && flags.dot == 1)
+		d.len = 0;
+	else
+		d.len = (int)ft_strlen(flags.str);
 	ft_x_hub(flags, d, tot);
 	free (flags.str);
 }

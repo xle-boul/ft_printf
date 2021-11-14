@@ -37,7 +37,6 @@ int main()
 	char	*s = "-2147483648";
 	char	*t = "0x12345678";
 	char	*u = "-0";
-	
 
 	printf("fake = %d\ntrue = %d\n\n", ft_printf("Simple input test\n"), printf("Simple input test\n")); //
 	printf("fake = %d\ntrue = %d\n\n", ft_printf("1|%i, %d, %d, %d, %d, %s, %c, %d, %u, %x, %X\n", i, j, k, l, m, n, c, c, j, j, j), printf("1|%i, %d, %d, %d, %d, %s, %c, %d, %u, %x, %X\n", i, j, k, l, m, n, c, c, j, j, j)); //

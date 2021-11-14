@@ -6,7 +6,7 @@
 /*   By: xle-boul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 12:10:04 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/11/14 16:00:52 by xle-boul         ###   ########.fr       */
+/*   Updated: 2021/11/14 16:49:44 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_u_001(t_flags flags, t_char d, t_tot *tot)
 {
 	d.i = 0;
-	if (flags.spaplus != 0 && d.ui >= 0)
+	if (flags.spaplus != 0 && d.ui > 0)
 		ft_spaplus(flags, d, flags.dot_num, tot);
 	if (flags.dot == 1)
 		ft_padding(0, d.i, (flags.dot_num - d.len), tot);
@@ -45,11 +45,11 @@ void	ft_u_100_1m10(t_flags flags, t_char d, t_tot *tot)
 void	ft_u_110(t_flags flags, t_char d, t_tot *tot)
 {
 	d.i = 0;
-	ft_u_001(flags, d, tot);
 	if (flags.spaplus != 0)
-		flags.number--;
+		flags.number = ft_spaplus(flags, d, flags.dot_num, tot);
 	flags.number -= d.len;
 	ft_padding(1, d.i, flags.number, tot);
+	ft_printf_u(flags, d, tot);
 }
 
 void	ft_u_111(t_flags flags, t_char d, t_tot *tot)

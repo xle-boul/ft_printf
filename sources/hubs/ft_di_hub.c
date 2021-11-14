@@ -19,7 +19,7 @@ void	ft_printf_di(t_flags flags, t_char d, t_tot *tot)
 	int	i;
 
 	i = 0;
-	if (flags.dot == 1 && flags.dot_num == 0 && d.ct == 0)
+	if (flags.dot == 1 && d.ct == 0)
 		return ;
 	while (flags.str[i] != '\0')
 	{
@@ -39,6 +39,8 @@ void	ft_di_hub(t_flags flags, t_char d, t_tot *tot)
 		|| (flags.number != 0 && flags.zemin == 1
 			&& flags.dot == 1 && flags.dot_num > flags.number))
 		ft_di_001(flags, d, tot);
+	else if (flags.number == 0 && flags.zemin == -1 && flags.dot == 1)
+		ft_di_100_1m10(flags, d, tot);
 	else if ((flags.number != 0 && flags.zemin == 0 && flags.dot == 0)
 		|| (flags.number != 0 && flags.zemin == -1 && flags.dot == 0))
 		ft_di_100_1m10(flags, d, tot);
@@ -60,7 +62,10 @@ void	ft_di_setup(t_flags flags, va_list args, t_tot *tot)
 
 	d.ct = va_arg(args, int);
 	flags.str = ft_itoa_printf(d.ct);
-	d.len = (int)ft_strlen(flags.str);
+	if (d.ct == 0 && flags.dot == 1)
+		d.len = 0;
+	else
+		d.len = (int)ft_strlen(flags.str);
 	ft_di_hub(flags, d, tot);
 	free (flags.str);
 }
