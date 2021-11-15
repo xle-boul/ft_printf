@@ -51,3 +51,21 @@ int	ft_spaplus(t_flags flags, t_char d, int i, t_tot *tot)
 	}
 	return (i);
 }
+
+int	ft_square(t_flags flags, t_char d, int i, t_tot *tot)
+{
+	if (d.lui != 0 && flags.square == 1)
+	{
+		if (flags.param == 'x')
+		{
+			ft_putstr_fd_print("0x", 1, 2, tot);
+			return (i - 2);
+		}
+		else if (flags.param == 'X')
+		{
+			ft_putstr_fd_print("0X", 1, 2, tot);
+			return (i - 2);
+		}
+	}
+	return (i);
+}

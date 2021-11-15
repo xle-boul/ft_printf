@@ -15,7 +15,7 @@
 
 /* converts an int to its char representation */
 
-static int	ft_find_amount_of_dgts_pf_x(unsigned int n)
+static int	ft_find_amount_of_dgts_pf_x(unsigned long int n)
 {
 	int	i;
 
@@ -30,7 +30,7 @@ static int	ft_find_amount_of_dgts_pf_x(unsigned int n)
 	return (i);
 }
 
-char	*ft_itoa_printf_x(unsigned int n, t_char d, t_flags flags)
+char	*ft_itoa_printf_x(unsigned long int n, t_char d, t_flags flags)
 {
 	char			*str;
 
@@ -61,7 +61,7 @@ char	*ft_itoa_printf_x(unsigned int n, t_char d, t_flags flags)
 // {
 // 	t_char d;
 // 	t_flags flags;
-// 	unsigned long long int		i = 1;
-// 	ft_itoa_printf_x(i, d, flags);
+// 	unsigned long int		i = 123456789;
+// 	printf("%s", ft_itoa_printf_x(i, d, flags));
 // 	return (0);
 // }

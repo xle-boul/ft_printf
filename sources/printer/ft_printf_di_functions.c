@@ -98,7 +98,7 @@ void	ft_di_101(t_flags flags, t_char d, t_tot *tot)
 		flags.number--;
 	if (flags.dot_num > d.len)
 		ft_padding(1, d.i, (flags.number - flags.dot_num), tot);
-	else if (flags.dot_num <= d.len)	
+	else if (flags.dot_num <= d.len)
 		ft_padding(1, d.i, (flags.number - d.len), tot);
 	if (d.ct < 0)
 		ft_putchar_fd_print('-', 1, tot);

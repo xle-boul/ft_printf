@@ -31,7 +31,7 @@ typedef struct s_char
 {
 	int						i;
 	int						j;
-	long long unsigned int	lui;
+	long unsigned int		lui;
 	char					*str;
 	char					*c_bis;
 	int						len;
@@ -80,6 +80,7 @@ void	ft_numbers_in_flags(t_flags *flags);
 void	ft_flags_conditions(t_flags *flags);
 void	ft_padding(int s, int start, int stop, t_tot *tot);
 int		ft_spaplus(t_flags flags, t_char d, int i, t_tot *tot);
+int		ft_square(t_flags flags, t_char d, int i, t_tot *tot);
 void	ft_s_hub(t_flags flags, va_list args, t_tot *tot);
 void	ft_s_number_is_zero(t_flags flags, t_tot *tot, char *dot);
 void	ft_s_num_flags_0(t_flags flags, t_tot *tot);
@@ -88,7 +89,7 @@ void	ft_s_num_dot_1_min_0(t_flags flags, t_tot *tot, char *dot);
 void	ft_s_num_dot_1_min_1(t_flags flags, t_tot *tot, char *dot);
 char	*ft_itoa_printf(int n);
 char	*ft_itoa_printf_u(unsigned int n);
-char	*ft_itoa_printf_x(unsigned int n, t_char d, t_flags flags);
+char	*ft_itoa_printf_x(unsigned long int n, t_char d, t_flags flags);
 char	*ft_itoa_printf_p(unsigned long int n, t_char d, t_flags flags);
 void	ft_di_setup(t_flags flags, va_list args, t_tot *tot);
 void	ft_di_hub(t_flags flags, t_char d, t_tot *tot);

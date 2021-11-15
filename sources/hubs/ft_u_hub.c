@@ -20,10 +20,7 @@ void	ft_printf_u(t_flags flags, t_char d, t_tot *tot)
 
 	i = 0;
 	if (flags.dot == 1 && d.ui == 0)
-	{
-		ft_putchar_fd_print(' ', 1, tot);
 		return ;
-	}
 	while (flags.str[i] != '\0')
 	{
 		ft_putchar_fd_print(flags.str[i], 1, tot);
@@ -40,6 +37,8 @@ void	ft_u_hub(t_flags flags, t_char d, t_tot *tot)
 		|| (flags.number != 0 && flags.zemin == 1
 			&& flags.dot == 1 && flags.dot_num > flags.number))
 		ft_u_001(flags, d, tot);
+	else if (flags.number == 0 && flags.zemin == -1 && flags.dot == 1)
+		ft_u_100_1m10(flags, d, tot);
 	else if ((flags.number != 0 && flags.zemin == 0 && flags.dot == 0)
 		|| (flags.number != 0 && flags.zemin == -1 && flags.dot == 0))
 		ft_u_100_1m10(flags, d, tot);

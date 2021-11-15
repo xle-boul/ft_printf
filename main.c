@@ -38,10 +38,6 @@ int main()
 	char	*t = "0x12345678";
 	char	*u = "-0";
 
-	ft_printf("%0+-25.20d$", 4);
-	ft_printf("\n\n");
-	printf("%0+-25.20d$\n", 4);
-
 	printf("fake = %d\ntrue = %d\n\n", ft_printf("Simple input test\n"), printf("Simple input test\n")); //
 	printf("fake = %d\ntrue = %d\n\n", ft_printf("1|%i, %d, %d, %d, %d, %s, %c, %d, %u, %x, %X\n", i, j, k, l, m, n, c, c, j, j, j), printf("1|%i, %d, %d, %d, %d, %s, %c, %d, %u, %x, %X\n", i, j, k, l, m, n, c, c, j, j, j)); //
 	printf("fake = %d\ntrue = %d\n\n", ft_printf("2|%0i, %0d, %0d, %0d, %0d, %0d, %0d, %0d\n", i, j, k, l, m, c, e, d), printf("2|%0i, %0d, %0d, %0d, %0d, %0d, %0d, %0d\n", i, j, k, l, m, c, e, d)); //
@@ -53,17 +49,17 @@ int main()
 	printf("fake = %d\ntrue = %d\n\n", ft_printf("8|%6i, %6d, %6d, %6d, %6d, %6d, %6d, %6d\n", i, j, k, l, m, c, e, d), printf("8|%6i, %6d, %6d, %6d, %6d, %6d, %6d, %6d\n", i, j, k, l, m, c, e, d)); //
 	printf("fake = %d\ntrue = %d\n\n", ft_printf("9|%7i, %7d, %7d, %7d, %7d, %7d, %7d, %7d\n", i, j, k, l, m, c, e, d), printf("9|%7i, %7d, %7d, %7d, %7d, %7d, %7d, %7d\n", i, j, k, l, m, c, e, d)); //
 	printf("fake = %d\ntrue = %d\n\n", ft_printf("10|%8i, %8d, %8d, %8d, %8d, %8d, %8d, %8d\n", i, j, k, l, m, c, e, d), printf("10|%8i, %8d, %8d, %8d, %8d, %8d, %8d, %8d\n", i, j, k, l, m, c, e, d)); //
-	printf("fake = %d\ntrue = %d\n\n", ft_printf("11|%0.i, %0.d, %0.d, %0.d, %0.d, %0.d, %0.d, %0.d\n", i, j, k, l, m, c, e, d), printf("11|%0.i, %0.d, %0.d, %0.d, %0.d, %0.d, %0.d, %0.d\n", i, j, k, l, m, c, e, d)); //
+	printf("fake = %d\ntrue = %d\n\n", ft_printf("11|%0.i, %0.d, %0.X, %0.d, %0.d, %0.d, %0.d, %0.d\n", i, j, k, l, m, c, e, d), printf("11|%0.i, %0.d, %0.X, %0.d, %0.d, %0.d, %0.d, %0.d\n", i, j, k, l, m, c, e, d)); //
 	printf("fake = %d\ntrue = %d\n\n", ft_printf("13|%0.0i, %0.0d, %0.0d, %0.0d, %0.0d, %0.0d, %0.0d, %0.0d\n", i, j, k, l, m, c, e, d), printf("13|%0.0i, %0.0d, %0.0d, %0.0d, %0.0d, %0.0d, %0.0d, %0.0d\n", i, j, k, l, m, c, e, d)); //
 	printf("fake = %d\ntrue = %d\n\n", ft_printf("14|%-0i, %-0d, %-0d, %-0d, %-0d, %-0d, %-0d, %-0d\n", i, j, k, l, m, c, e, d), printf("14|%-0i, %-0d, %-0d, %-0d, %-0d, %-0d, %-0d, %-0d\n", i, j, k, l, m, c, e, d)); //
 	printf("fake = %d\ntrue = %d\n\n", ft_printf("15|%0-i, %0-d, %0-d, %0-d, %0-d, %0-d, %0-d, %0-d\n", i, j, k, l, m, c, e, d), printf("15|%0-i, %0-d, %0-d, %0-d, %0-d, %0-d, %0-d, %0-d\n", i, j, k, l, m, c, e, d)); //
-	printf("fake = %d\ntrue = %d\n\n", ft_printf("16|%-.i, %-.d, %-.d, %-.d, %-.d, %-.d, %-.d, %-.d\n", i, j, k, l, m, c, e, d), printf("16|%-.i, %-.d, %-.d, %-.d, %-.d, %-.d, %-.d, %-.d\n", i, j, k, l, m, c, e, d)); //
+	printf("fake = %d\ntrue = %d\n\n", ft_printf("16|%-.i, %-.d, %-.d, %-.d, %-.d, %-.d, %-.d, %-.d\n", i, j, k, l, m, c, e, d), printf("16|%-.i, %-.d, %-.d, %-.X, %-.d, %-.d, %-.d, %-.d\n", i, j, k, l, m, c, e, d)); //
 	printf("fake = %d\ntrue = %d\n\n", ft_printf("17|%-.0i, %-.0d, %-.0d, %-.0d, %-.0d, %-.0d, %-.0d, %-.0d\n", i, j, k, l, m, c, e, d), printf("17|%-.0i, %-.0d, %-.0d, %-.0d, %-.0d, %-.0d, %-.0d, %-.0d\n", i, j, k, l, m, c, e, d)); //
 	printf("fake = %d\ntrue = %d\n\n", ft_printf("18|%-i, %-d, %-d, %-d, %-d, %-d, %-d, %-d\n", i, j, k, l, m, c, e, d), printf("18|%-i, %-d, %-d, %-d, %-d, %-d, %-d, %-d\n", i, j, k, l, m, c, e, d)); //
-	printf("fake = %d\ntrue = %d\n\n", ft_printf("19|%.i, %.d, %.d, %.d, %.d, %.d, %.d, %.d\n", i, j, k, l, m, c, e, d), printf("19|%.i, %.d, %.d, %.d, %.d, %.d, %.d, %.d\n", i, j, k, l, m, c, e, d)); //
+	printf("fake = %d\ntrue = %d\n\n", ft_printf("19|%.i, %.d, %.d, %.X, %.d, %.X, %.d, %.d\n", i, j, k, l, m, c, e, d), printf("19|%.i, %.d, %.d, %.d, %.d, %.d, %.d, %.d\n", i, j, k, l, m, c, e, d)); //
 	printf("fake = %d\ntrue = %d\n\n", ft_printf("20|%-0.0i, %-0.0d, %-0.0d, %-0.0d, %-0.0d, %-0.0d, %-0.0d, %-0.0d\n", i, j, k, l, m, c, e, d), printf("20|%-0.0i, %-0.0d, %-0.0d, %-0.0d, %-0.0d, %-0.0d, %-0.0d, %-0.0d\n", i, j, k, l, m, c, e, d)); //
 	printf("fake = %d\ntrue = %d\n\n", ft_printf("21|%00i, %00d, %00d, %00d, %00d, %00d, %00d, %00d\n", i, j, k, l, m, c, e, d), printf("21|%00i, %00d, %00d, %00d, %00d, %00d, %00d, %00d\n", i, j, k, l, m, c, e, d)); //
-	printf("fake = %d\ntrue = %d\n\n", ft_printf("22|%1.i, %1.d, %1.d, %1.d, %1.d, %1.d, %1.d, %1.d\n", i, j, k, l, m, c, e, d), printf("22|%1.i, %1.d, %1.d, %1.d, %1.d, %1.d, %1.d, %1.d\n", i, j, k, l, m, c, e, d)); //
+	printf("fake = %d\ntrue = %d\n\n", ft_printf("22|%1.i, %1.d, %1.X, %1.d, %1.d, %1.d, %1.d, %1.d\n", i, j, k, l, m, c, e, d), printf("22|%1.i, %1.d, %1.X, %1.d, %1.d, %1.d, %1.d, %1.d\n", i, j, k, l, m, c, e, d)); //
 	printf("fake = %d\ntrue = %d\n\n", ft_printf("23|%.1i, %.1d, %.1d, %.1d, %.1d, %.1d, %.1d, %.1d\n", i, j, k, l, m, c, e, d), printf("23|%.1i, %.1d, %.1d, %.1d, %.1d, %.1d, %.1d, %.1d\n", i, j, k, l, m, c, e, d)); //
 	printf("fake = %d\ntrue = %d\n\n", ft_printf("24|%1.1i, %1.1d, %1.1d, %1.1d, %1.1d, %1.1d, %1.1d, %1.1d\n", i, j, k, l, m, c, e, d), printf("24|%1.1i, %1.1d, %1.1d, %1.1d, %1.1d, %1.1d, %1.1d, %1.1d\n", i, j, k, l, m, c, e, d)); //
 	printf("fake = %d\ntrue = %d\n\n", ft_printf("25|%-1i, %-1d, %-1d, %-1d, %-1d, %-1d, %-1d, %-1d\n", i, j, k, l, m, c, e, d), printf("25|%-1i, %-1d, %-1d, %-1d, %-1d, %-1d, %-1d, %-1d\n", i, j, k, l, m, c, e, d)); //
