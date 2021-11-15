@@ -18,14 +18,14 @@ void	ft_hub(t_flags flags, va_list args, t_tot *tot)
 {
 	if (flags.param == 'c' || flags.param == '%')
 		ft_printf_c(flags, args, tot);
-	if (flags.param == 's')
+	else if (flags.param == 's')
 		ft_s_hub(flags, args, tot);
-	if (flags.param == 'x' || flags.param == 'X')
+	else if (flags.param == 'x' || flags.param == 'X')
 		ft_x_setup(flags, args, tot);
-	if (flags.param == 'u')
+	else if (flags.param == 'u')
 		ft_u_setup(flags, args, tot);
-	if (flags.param == 'p')
+	else if (flags.param == 'p')
 		ft_p_setup(flags, args, tot);
-	if (flags.param == 'd' || flags.param == 'i')
+	else if (flags.param == 'd' || flags.param == 'i')
 		ft_di_setup(flags, args, tot);
 }

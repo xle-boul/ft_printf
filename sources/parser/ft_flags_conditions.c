@@ -12,6 +12,8 @@
 
 #include "../../libprintf.h"
 
+// spots the numbers in flags string and matches with width or precision
+
 void	ft_numbers_in_flags(t_flags *flags)
 {
 	if (*(flags->substr) == '.')
@@ -28,6 +30,8 @@ void	ft_numbers_in_flags(t_flags *flags)
 			flags->number = ft_atoi(flags->substr);
 	}
 }
+
+// assigns variables values according to flags
 
 void	ft_flags_conditions(t_flags *flags)
 {

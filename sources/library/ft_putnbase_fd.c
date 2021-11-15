@@ -12,7 +12,7 @@
 
 #include "../../libprintf.h"
 
-/* putnbr in chosen base but chose on which file descriptor it is printed */
+/* putnbr in chosen base but choose on which file descriptor it is printed */
 
 void	ft_putnbase_cap_fd(unsigned long int n, int base, int fd, t_tot *tot)
 {

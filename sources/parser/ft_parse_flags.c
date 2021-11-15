@@ -42,6 +42,8 @@ void	ft_manage_flags(va_list args, t_flags flags, t_tot *tot)
 	ft_hub(flags, args, tot);
 }
 
+// initiates the structure to store flags values
+
 void	ft_init_struct(char *str, va_list args, t_tot *tot)
 {
 	t_flags	flags;

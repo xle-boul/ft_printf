@@ -66,6 +66,8 @@ int	ft_what_number(char c)
 	return (-1);
 }
 
+// checks if a given string matches all diff flags and numbers -> libprntf.h
+
 int	ft_what_all(char c)
 {
 	t_char	j;

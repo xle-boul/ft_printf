@@ -6,7 +6,7 @@
 /*   By: xle-boul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 11:39:47 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/11/14 11:47:18 by xle-boul         ###   ########.fr       */
+/*   Updated: 2021/11/15 13:54:19 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,15 +35,19 @@ void	ft_p_hub(t_flags flags, t_char d, t_tot *tot)
 		|| (flags.number != 0 && flags.zemin == 1
 			&& flags.dot == 1 && flags.dot_num > flags.number))
 		ft_p_001(flags, d, tot);
+	else if (flags.number == 0 && flags.zemin == -1 && flags.dot == 1)
+		ft_p_100_1m10(flags, d, tot);
 	else if ((flags.number != 0 && flags.zemin == 0 && flags.dot == 0)
 		|| (flags.number != 0 && flags.zemin == -1 && flags.dot == 0))
 		ft_p_100_1m10(flags, d, tot);
+	else if (flags.number == 0 && flags.zemin == 1 && flags.dot == 1)
+		ft_p_110(flags, d, tot);
 	else if (flags.number != 0 && flags.zemin == 1 && flags.dot == 0)
 		ft_p_110(flags, d, tot);
 	else if (flags.number != 0 && flags.zemin == 1 && flags.dot == 1)
-		ft_p_111(flags, d, tot);
+		ft_p_110(flags, d, tot);
 	else if (flags.number != 0 && flags.zemin != 1 && flags.dot == 1)
-		ft_p_101(flags, d, tot);
+		ft_p_100_1m10(flags, d, tot);
 }
 
 // initiates the variables for the following functions

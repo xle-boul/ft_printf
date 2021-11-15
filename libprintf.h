@@ -6,7 +6,7 @@
 /*   By: xle-boul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 15:49:49 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/11/14 15:27:46 by xle-boul         ###   ########.fr       */
+/*   Updated: 2021/11/15 13:54:49 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,16 +29,16 @@ typedef struct s_tot
 }			t_tot;
 typedef struct s_char
 {
-	int						i;
-	int						j;
-	long unsigned int		lui;
-	char					*str;
-	char					*c_bis;
-	int						len;
-	char					c;
-	long int				li;
-	unsigned int			ui;
-	int						ct;
+	int							i;
+	int							j;
+	long long unsigned int		lui;
+	char						*str;
+	char						*c_bis;
+	int							len;
+	char						c;
+	long int					li;
+	unsigned int				ui;
+	int							ct;
 }			t_char;
 typedef struct s_flags
 {
@@ -117,7 +117,5 @@ void	ft_p_hub(t_flags flags, t_char d, t_tot *tot);
 void	ft_p_001(t_flags flags, t_char d, t_tot *tot);
 void	ft_p_100_1m10(t_flags flags, t_char d, t_tot *tot);
 void	ft_p_110(t_flags flags, t_char d, t_tot *tot);
-void	ft_p_111(t_flags flags, t_char d, t_tot *tot);
-void	ft_p_101(t_flags flags, t_char d, t_tot *tot);
 
 #endif

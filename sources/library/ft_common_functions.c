@@ -12,6 +12,8 @@
 
 #include "../../libprintf.h"
 
+// fonction to add padding according to precision or width
+
 void	ft_padding(int s, int start, int stop, t_tot *tot)
 {
 	if (start >= stop)
@@ -34,6 +36,8 @@ void	ft_padding(int s, int start, int stop, t_tot *tot)
 	}
 }
 
+// fuction to deal with the plus and space flags
+
 int	ft_spaplus(t_flags flags, t_char d, int i, t_tot *tot)
 {
 	if (d.ui > 0)
@@ -51,6 +55,8 @@ int	ft_spaplus(t_flags flags, t_char d, int i, t_tot *tot)
 	}
 	return (i);
 }
+
+// function to deal with square flag
 
 int	ft_square(t_flags flags, t_char d, int i, t_tot *tot)
 {
