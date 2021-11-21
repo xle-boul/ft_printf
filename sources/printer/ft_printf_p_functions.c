@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_p_functions.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xle-boul <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: xle-boul <xle-boul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 12:10:04 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/11/15 18:05:50 by xle-boul         ###   ########.fr       */
+/*   Updated: 2021/11/21 12:38:17 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../libprintf.h"
+#include "../../ft_printf.h"
 
 void	ft_p_001(t_flags flags, t_char d, t_tot *tot)
 {

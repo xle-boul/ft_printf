@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_flags_conditions.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xle-boul <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: xle-boul <xle-boul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 14:48:28 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/11/14 15:04:05 by xle-boul         ###   ########.fr       */
+/*   Updated: 2021/11/21 12:38:17 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../libprintf.h"
+#include "../../ft_printf.h"
 
 // spots the numbers in flags string and matches with width or precision
 

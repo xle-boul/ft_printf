@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_di_functions.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xle-boul <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: xle-boul <xle-boul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 12:10:04 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/11/14 16:42:21 by xle-boul         ###   ########.fr       */
+/*   Updated: 2021/11/21 13:44:51 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../libprintf.h"
+#include "../../ft_printf.h"
 
 void	ft_di_001(t_flags flags, t_char d, t_tot *tot)
 {
@@ -64,8 +64,8 @@ void	ft_di_110(t_flags flags, t_char d, t_tot *tot)
 			flags.number = ft_spaplus(flags, d, flags.dot_num, tot);
 		flags.number -= d.len;
 	}
-	ft_padding(1, d.i, flags.number, tot);
 	ft_printf_di(flags, d, tot);
+	ft_padding(1, d.i, flags.number, tot);
 }
 
 void	ft_di_111(t_flags flags, t_char d, t_tot *tot)

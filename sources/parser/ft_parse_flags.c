@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parse_flags.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xle-boul <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: xle-boul <xle-boul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 11:39:20 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/11/14 15:05:11 by xle-boul         ###   ########.fr       */
+/*   Updated: 2021/11/21 14:32:29 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../libprintf.h"
+#include "../../ft_printf.h"
 
 /* assigns values to struct i according to flags */
 

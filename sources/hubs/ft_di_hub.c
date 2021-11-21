@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_di_hub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xle-boul <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: xle-boul <xle-boul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 11:39:47 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/11/14 16:26:29 by xle-boul         ###   ########.fr       */
+/*   Updated: 2021/11/21 13:49:17 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../libprintf.h"
+#include "../../ft_printf.h"
 
 // simple basic printing function for types i and d
 
@@ -40,7 +40,7 @@ void	ft_di_hub(t_flags flags, t_char d, t_tot *tot)
 			&& flags.dot == 1 && flags.dot_num > flags.number))
 		ft_di_001(flags, d, tot);
 	else if (flags.number == 0 && flags.zemin == -1 && flags.dot == 1)
-		ft_di_100_1m10(flags, d, tot);
+		ft_di_001(flags, d, tot);
 	else if ((flags.number != 0 && flags.zemin == 0 && flags.dot == 0)
 		|| (flags.number != 0 && flags.zemin == -1 && flags.dot == 0))
 		ft_di_100_1m10(flags, d, tot);

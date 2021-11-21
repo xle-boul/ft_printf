@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_common_functions.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xle-boul <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: xle-boul <xle-boul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 13:32:58 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/11/14 11:47:35 by xle-boul         ###   ########.fr       */
+/*   Updated: 2021/11/21 13:40:17 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../libprintf.h"
+#include "../../ft_printf.h"
 
 // fonction to add padding according to precision or width
 
@@ -40,7 +40,7 @@ void	ft_padding(int s, int start, int stop, t_tot *tot)
 
 int	ft_spaplus(t_flags flags, t_char d, int i, t_tot *tot)
 {
-	if (d.ui > 0)
+	if (d.ui > 0 || d.ct > 0)
 	{
 		if (flags.spaplus == -1)
 		{

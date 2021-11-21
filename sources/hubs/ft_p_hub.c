@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_p_hub.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xle-boul <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: xle-boul <xle-boul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 11:39:47 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/11/15 13:54:19 by xle-boul         ###   ########.fr       */
+/*   Updated: 2021/11/21 15:16:58 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../libprintf.h"
+#include "../../ft_printf.h"
 
 // simple basic printing function for types i and d
 
@@ -57,7 +57,7 @@ void	ft_p_setup(t_flags flags, va_list args, t_tot *tot)
 	t_char	d;
 
 	d.lui = va_arg(args, unsigned long int);
-	flags.str = ft_itoa_printf_x(d.lui, d, flags);
+	flags.str = ft_itoa_printf_p(d.lui, d, flags);
 	d.len = (int)ft_strlen(flags.str);
 	ft_p_hub(flags, d, tot);
 	free (flags.str);

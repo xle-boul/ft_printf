@@ -3,23 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_x_functions.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xle-boul <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: xle-boul <xle-boul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 12:10:04 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/11/14 15:53:28 by xle-boul         ###   ########.fr       */
+/*   Updated: 2021/11/21 15:37:54 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../libprintf.h"
+#include "../../ft_printf.h"
 
 void	ft_x_001(t_flags flags, t_char d, t_tot *tot)
 {
 	d.i = 0;
 	if (flags.dot == 1)
 		ft_padding(0, d.i, (flags.dot_num - d.len), tot);
-	if (d.lui != 0 && flags.square == 1 && flags.param == 'x')
+	if ((unsigned int)d.lui != 0
+		&& flags.square == 1 && flags.param == 'x')
 		ft_putstr_fd_print("0x", 1, 2, tot);
-	if (d.lui != 0 && flags.square == 1 && flags.param == 'X')
+	if ((unsigned int)d.lui != 0
+		&& flags.square == 1 && flags.param == 'X')
 		ft_putstr_fd_print("0X", 1, 2, tot);
 	ft_printf_x(flags, d, tot);
 }
@@ -47,10 +49,10 @@ void	ft_x_110(t_flags flags, t_char d, t_tot *tot)
 {
 	d.i = 0;
 	flags.number -= d.len;
-	ft_padding(1, d.i, flags.number, tot);
 	if (d.lui != 0 && flags.square == 1)
 		flags.number = ft_square(flags, d, flags.number, tot);
 	ft_printf_x(flags, d, tot);
+	ft_padding(1, d.i, flags.number, tot);
 }
 
 void	ft_x_111(t_flags flags, t_char d, t_tot *tot)
