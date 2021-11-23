@@ -6,7 +6,7 @@
 /*   By: xle-boul <xle-boul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 15:49:49 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/11/21 15:16:44 by xle-boul         ###   ########.fr       */
+/*   Updated: 2021/11/23 12:12:10 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,8 @@ typedef struct s_char
 	int							j;
 	long long unsigned int		lui;
 	char						*str;
-	char						*c_bis;
 	int							len;
 	char						c;
-	long int					li;
 	unsigned int				ui;
 	int							ct;
 }			t_char;
