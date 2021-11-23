@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_s_hub.c                                         :+:      :+:    :+:   */
+/*   ft_s_hub_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xle-boul <xle-boul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 11:48:49 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/11/21 14:54:36 by xle-boul         ###   ########.fr       */
+/*   Updated: 2021/11/23 16:42:05 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../ft_printf.h"
+#include "ft_printf_bonus.h"
 
 // this function trims the argument to the proper size, according to
 // precision's value. makes it easier to then print

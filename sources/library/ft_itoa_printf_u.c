@@ -6,11 +6,11 @@
 /*   By: xle-boul <xle-boul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 21:41:51 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/11/21 12:38:17 by xle-boul         ###   ########.fr       */
+/*   Updated: 2021/11/23 14:54:15 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../ft_printf.h"
+#include "../../header/ft_printf.h"
 
 /* converts an int to its char representation */
 
@@ -50,13 +50,3 @@ char	*ft_itoa_printf_u(unsigned int n)
 	}
 	return (str);
 }
-
-// int main()
-// {
-// 	int		i = -2147483648;
-// 	char	*s = ft_itoa(i);
-
-// 	printf("%s\n", s);
-// 	free(s);
-// 	return (0);
-// }

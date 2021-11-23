@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_p_functions.c                            :+:      :+:    :+:   */
+/*   ft_printf_p_functions_bonus.c                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xle-boul <xle-boul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 12:10:04 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/11/21 12:38:17 by xle-boul         ###   ########.fr       */
+/*   Updated: 2021/11/23 16:41:57 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../ft_printf.h"
+#include "ft_printf_bonus.h"
 
 void	ft_p_001(t_flags flags, t_char d, t_tot *tot)
 {

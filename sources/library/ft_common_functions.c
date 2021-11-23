@@ -6,11 +6,11 @@
 /*   By: xle-boul <xle-boul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 13:32:58 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/11/21 13:40:17 by xle-boul         ###   ########.fr       */
+/*   Updated: 2021/11/23 14:54:15 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../ft_printf.h"
+#include "../../header/ft_printf.h"
 
 // fonction to add padding according to precision or width
 

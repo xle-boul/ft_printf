@@ -6,11 +6,11 @@
 /*   By: xle-boul <xle-boul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 14:49:21 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/11/21 12:38:17 by xle-boul         ###   ########.fr       */
+/*   Updated: 2021/11/23 14:54:15 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../ft_printf.h"
+#include "../../header/ft_printf.h"
 
 /* checks if a given string matches the char -> libprntf.h */
 

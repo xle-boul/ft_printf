@@ -6,12 +6,11 @@
 /*   By: xle-boul <xle-boul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 21:41:51 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/11/21 15:16:23 by xle-boul         ###   ########.fr       */
+/*   Updated: 2021/11/23 14:54:15 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../ft_printf.h"
-#include <limits.h>
+#include "../../header/ft_printf.h"
 
 /* converts an int to its char representation */
 
@@ -94,13 +93,3 @@ char	*ft_itoa_printf_p(unsigned long int n, t_char d, t_flags flags)
 	}
 	return (str);
 }
-// int main()
-// {
-// 	t_char				d;
-// 	t_flags				flags;
-// 	unsigned long int	i;
-	
-// 	i = ULONG_MAX;
-// 	printf("%lu -- %s", i, ft_itoa_printf_x(i, d, flags));
-// 	return (0);
-// }
