@@ -6,7 +6,7 @@
 #    By: xle-boul <xle-boul@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/19 18:54:09 by xle-boul          #+#    #+#              #
-#    Updated: 2021/11/23 16:42:50 by xle-boul         ###   ########.fr        #
+#    Updated: 2021/11/28 11:50:29 by xle-boul         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -104,4 +104,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: lib printf obj_dir create_libft clean fclean re
+.PHONY: $(LIB) $(NAME) $(OBJS_DIR) all bonus objsdirbonus clean fclean re
