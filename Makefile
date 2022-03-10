@@ -71,16 +71,16 @@ SRCS_DIR = sources/
 OBJS = *.o
 
 $(NAME): $(OBJS_DIR) $(LIB)
-	@ar r $(NAME) $(LIB_OBJS_DIR)$(OBJS) $(OBJS_DIR)$(OBJS)
-	@echo "$(NAME), created!"
+	ar r $(NAME) $(LIB_OBJS_DIR)$(OBJS) $(OBJS_DIR)$(OBJS)
+	echo "$(NAME), created!"
 
 $(LIB):
-	@make $(LIB) -C $(LIB_DIR)
+	make $(LIB) -C $(LIB_DIR)
 
 $(OBJS_DIR):
-	@mkdir -p $(OBJS_DIR)
-	@$(CC) $(CC_FLAGS) -c $(INCLUDES) $(SRCS)
-	@mv *.o $(OBJS_DIR)
+	mkdir -p $(OBJS_DIR)
+	$(CC) $(CC_FLAGS) -c $(INCLUDES) $(SRCS)
+	mv *.o $(OBJS_DIR)
 
 all: $(NAME)
 	
@@ -104,4 +104,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: $(LIB) $(NAME) $(OBJS_DIR) all bonus objsdirbonus clean fclean re
+.PHONY: all bonus clean fclean re

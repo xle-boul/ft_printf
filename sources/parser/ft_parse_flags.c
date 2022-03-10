@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parse_flags.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xle-boul <xle-boul@student.42.fr>          +#+  +:+       +#+        */
+/*   By: xle-boul <xle-boul@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 11:39:20 by xle-boul          #+#    #+#             */
-/*   Updated: 2021/11/23 14:54:15 by xle-boul         ###   ########.fr       */
+/*   Updated: 2022/03/03 19:26:57 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,10 @@ void	ft_isolate_flags(const char *c, int len, va_list args, t_tot *tot)
 	t_char	l;
 
 	l.i = 0;
-	l.str = (char *)malloc(sizeof(char) * (len + 1));
+	if (len > 0)
+		l.str = (char *)malloc(sizeof(char) * (len + 1));
+	else if (len == 0)
+		l.str = (char *)malloc(sizeof(char) * 2);
 	if (!l.str)
 		return ;
 	while (l.i <= len)

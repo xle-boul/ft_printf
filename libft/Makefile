@@ -92,4 +92,4 @@ bonus: $(OBJECTS_BONUS_PREFIXED)
 	@ar r $(NAME) $(OBJECTS_BONUS_PREFIXED)
 	@echo "$(NAME) Bonus, created!"
 
-.PHONY: $(NAME) clean fclean re bonus $(OBJS_DIR)
+.PHONY: all clean fclean re bonus
